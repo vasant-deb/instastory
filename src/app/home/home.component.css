@@ -1,0 +1,14 @@
+a.titlestyle:hover {
+    font-size: 24px;
+}
+p {
+    font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-size: 16px;
+    line-height: 24px;
+}
+.lc{
+    height: 1px;
+    border: 0;
+    margin: 0;
+    background-color: rgb(145 143 143);
+}

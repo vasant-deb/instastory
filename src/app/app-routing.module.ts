@@ -1,7 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-const routes: Routes = [];
+import { HomeComponent } from './home/home.component';
+import { StoryComponent } from './story/story.component';
+import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'story/:slug', component: StoryComponent },
+  { path: 'login', component: LoginComponent },
+  {path: 'profile', component: ProfileComponent},
+    // otherwise redirect to home
+    { path: '**', redirectTo: '' }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
