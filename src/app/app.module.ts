@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -10,10 +9,11 @@ import { RightsidebarComponent } from './rightsidebar/rightsidebar.component';
 import { MobilemenuComponent } from './mobilemenu/mobilemenu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StoryComponent } from './story/story.component';
-import { MaterialComponent } from './material/material.component';
-import { ServicesComponent } from './services/services.component';
+//import { MaterialComponent } from './material/material.component';
+//import { ServicesComponent } from './services/services.component';
 import { NgHttpLoaderModule } from 'ng-http-loader';
-
+import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,8 +22,10 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
     RightsidebarComponent,
     MobilemenuComponent,
     StoryComponent,
-    MaterialComponent,
-    ServicesComponent
+    ProfileComponent,
+   // MaterialComponent,
+  //  ServicesComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

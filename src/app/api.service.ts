@@ -17,9 +17,10 @@ export class ApiService {
   getrecentstory() {
     return this.http.get(this.rootURL + '/rightsidebar');
   }
- // viewstory() {
- //   return this.http.get(this.rootURL + '/viewstory');
- // }
+  private url = 'http://jsonplaceholder.typicode.com/posts';
+  getPosts(){
+    return this.http.get(this.url);
+  }
   
  
 }
