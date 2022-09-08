@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
+
 
     
 @Component({
@@ -10,17 +10,12 @@ import { ApiService } from '../api.service';
 
 export class LoginComponent implements OnInit {
 
-  story:any;
  
-  constructor(private api:ApiService) {}
+ 
+  constructor() {}
   ngOnInit() {
-    
-      this.api.getstory()
-      .subscribe(response=> {
-        
-      this.story=response;
-      this.story=this.story.stats;
-  });
+     
+  
   }
 
 
