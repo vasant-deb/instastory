@@ -10,16 +10,19 @@ import { ApiService } from '../api.service';
 
 export class LoginComponent implements OnInit {
 
-  posts:any;
-  
+  story:any;
+ 
   constructor(private api:ApiService) {}
-  
   ngOnInit() {
-      this.api.getPosts()
-        .subscribe(response => {
-          this.posts = response;
-          console.log(this.posts);
-        });
+    
+      this.api.getstory()
+      .subscribe(response=> {
+        
+      this.story=response;
+      this.story=this.story.stats;
+  });
   }
+
+
 
 }
