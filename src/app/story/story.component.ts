@@ -35,9 +35,7 @@ export class StoryComponent implements OnInit {
       this.slug=data.stats.slug;
       
       this.image=data.stats.image;
-      console.log(this.tags);
-
-      console.log(data); // outputs angular
+  
   })
 
 

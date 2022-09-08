@@ -14,16 +14,9 @@ export class RightsidebarComponent implements OnInit {
   
   
   ngOnInit() {
-    
       this.api.getrecentstory().subscribe((data:any)=>{
       this.story=data.recentpost;
       this.tags = data.tags.split(',');
-      console.log(typeof this.tags); // 👉️ object
-
-      
-
-      
-      console.log(this.tags);
   });
 
 }

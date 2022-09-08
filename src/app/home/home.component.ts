@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
     
       this.api.getstory().subscribe((data:any)=>{
       this.story=data.stats;
-      console.log(this.story);
+    
   });
   
   }
