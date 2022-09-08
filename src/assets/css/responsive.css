@@ -39,6 +39,12 @@
     .no-sidebar:not(#single) {
         display: none !important;
     }
+    .bottom-menu {
+        z-index: 999;
+    }
+    .mobile{
+        display: inline-flex;
+    }
     .container .center {
         width: 100%;
         left: 0;
