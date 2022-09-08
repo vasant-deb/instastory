@@ -123,8 +123,8 @@
         display: none;
     }
 }
+@media only screen and (max-width: 502px) {
 
-@media only screen and (max-width: 415px) {
 	div.articles.classic article .epcl-dropcap {
         width: 60PX;
         height: 60px;
