@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoryComponent } from './story/story.component';
 import { MaterialComponent } from './material/material.component';
 import { ServicesComponent } from './services/services.component';
+import { NgHttpLoaderModule } from 'ng-http-loader';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ServicesComponent } from './services/services.component';
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
+    NgHttpLoaderModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
