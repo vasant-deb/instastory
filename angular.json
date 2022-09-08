@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "instastory1.1": {
+    "instastory": {
       "projectType": "application",
       "schematics": {},
       "root": "",

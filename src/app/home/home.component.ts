@@ -8,24 +8,14 @@ import {ApiService} from '../api.service';
   styleUrls: ['./home.component.css']
 })
 
-
 export class HomeComponent implements OnInit {
-
   story=null;
-  
   constructor(private api:ApiService) {}
-  
-  
   ngOnInit() {
     
       this.api.getstory().subscribe((data:any)=>{
       this.story=data.stats;
-    
   });
-  
   }
-  
-
-
   
 }
