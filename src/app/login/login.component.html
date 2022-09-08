@@ -1,33 +1,5 @@
 <div class="newpost" *ngFor="let lis of story">
-    <header>
-       <!-- start: .post-format-image -->
-       <div class="post-format-image post-style-small-image">
-          <!-- start: .featured-image -->
-          <div class="featured-image epcl-flex">
-             <!-- Loop: Small Image Style -->
-             <div class="info">
-                <div class="hide-on-mobile">
-                   <!-- start: .meta -->
-                   <div class="meta">
-                      <span class="views-counter meta-info icon comments" title="{{lis.first_name}} {{lis.last_name}}">
-                         <svg>
-                            <use xlink:href="#views-outline-icon"></use>
-                         </svg>
-                         <b>{{lis.first_name}} {{lis.last_name}}</b> - {{lis.created_at | date: 'MMMM dd, yyyy'}}
-                      </span>
-                      <div class="clear"></div>
-                   </div>
-                   <!-- end: .meta -->
-                </div>
-             </div>
-             <!-- Loop: Standard Image Style -->
-             <!-- Loop: Text only style -->
-          </div>
-          <!-- end: .featured-image -->
-       </div>
-       <!-- end: .post-format-image -->
-       <div class="clear"></div>
-    </header>
+   
     <!-- start: .bottom -->
     <div class="bottom">
        <div class="post-excerpt">
