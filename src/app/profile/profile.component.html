@@ -1,1 +1,101 @@
-<p>profile works!</p>
+<main *ngIf="viewuser">
+    
+    
+    <div id="profile-upper">
+      <div id="profile-banner-image">
+        <img src="https://beta.autoreport.space/storyapi/public/uploads/cover.jpg" alt="Banner image">
+      </div>
+      <div id="profile-d">
+        <div id="profile-pic">
+          <img src="{{viewuser.image}}">
+        </div>
+        <div id="u-name">{{viewuser.first_name}} {{viewuser.last_name}} </div>
+       
+        
+      </div>
+      <div id="black-grd"></div>
+    </div>
+    <div id="main-content">
+      <div class="tb">
+        <div class="td" id="l-col">
+          <div class="l-cnt">
+            <div class="cnt-label">
+              <i class="l-i" id="l-i-i"></i>
+              <span>Bio</span>
+              <div class="lb-action"><i class="material-icons">edit</i></div>
+            </div>
+            <div id="i-box">
+              <div id="intro-line">{{viewuser.profile}}</div>
+              <div id="u-occ">{{viewuser.bio}}</div>
+              <div id="u-loc"><i class="material-icons">location_on</i><b>{{viewuser.state}}</b>, <b>{{viewuser.country}}</b></div>
+            </div>
+          </div>
+          <div class="l-cnt l-mrg">
+            <div class="cnt-label">
+              <i class="l-i" id="l-i-p"></i>
+              <span>Bookmarks</span>
+          
+            </div>
+           
+            <div class="post postnew"  *ngFor="let lis of viewbookmarks">
+                <div class="tb">
+                
+                  <div class="td p-r-hdr newseting">
+                    <div class="p-u-info">
+                      <a href="story/{{lis.slug}}">{{lis.title}}</a> as Anonymous
+                    </div>
+                    <div class="p-dt">
+                      <i class="material-icons">calendar_today</i>
+                      <span>{{lis.created_at}}</span>
+                    </div>
+                  </div>
+              
+                </div>
+                <p [innerHTML]="(lis.description.length>6)? (lis.description | slice:0:150)+'..':(lis.description)"></p>
+                <hr aria-hidden="true" class="lc">
+              </div>
+
+
+          </div>
+        
+         
+        </div>
+        <div class="td" id="m-col">
+          
+          
+          <div>
+         <h1>Your Stories</h1>
+            <div class="post"  *ngFor="let liss of viewstory">
+              <div class="tb">
+                <a href="story/{{liss.slug}}" class="td p-p-pic"><img src="{{liss.image}}" alt="Rajeev's profile pic"></a>
+                <div class="td p-r-hdr">
+                  <div class="p-u-info">
+                    <a href="story/{{liss.slug}}">{{liss.title}}</a> as Anonymous
+                  </div>
+                  <div class="p-dt">
+                    <i class="material-icons">calendar_today</i>
+                    <span>{{liss.created_at}}</span>
+                  </div>
+                </div>
+                <div class="td p-opt"><i class="material-icons">keyboard_arrow_down</i></div>
+              </div>
+              <p [innerHTML]="(liss.description.length>6)? (liss.description | slice:0:150)+'..':(liss.description)"></p>
+              <div>
+                <div class="p-acts">
+                  <div class="p-act like"><i class="material-icons">thumb_up_alt</i><span>{{liss.agree}}</span></div>
+                  <div class="p-act comment"><i class="material-icons">comment</i><span>1</span></div>
+                  <div class="p-act share"><i class="material-icons">reply</i></div>
+                </div>
+                <hr aria-hidden="true" class="lc">
+              </div>
+             
+            </div>
+
+          </div>
+        
+        </div>
+       
+      </div>
+    </div>
+   
+  </main>

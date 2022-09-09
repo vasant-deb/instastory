@@ -34,8 +34,39 @@
     .no-sidebar:not(#single) {
         display: block !important;
     }
+    #profile-banner-image {
+        height: 250px !important;
+    
+    }
+    main {
+        max-width: 70% !important;
+    }
+    #l-col {
+        display: block !important;
+    }
+    .tb {
+        display: block !important;
+    }
+    #l-col {
+        width: 100% !important;
+        padding: 10px !important;
+    }
+    #main-content {
+        padding: 55px 0px 0px 10px !important;
+    }
+    #m-col {
+        padding: 0px 10px !important;
+    }
 }
 @media only screen and (max-width: 750px) {
+    .container{
+        max-width: 100% !important;
+        width: 100% !important;
+        margin:10px auto !important;
+      }
+    main {
+        max-width: 100% !important;
+    }
     .no-sidebar:not(#single) {
         display: none !important;
     }
@@ -127,6 +158,9 @@
     }
     .left-side-navbar {
         display: none;
+    }
+    div#m-col {
+        padding-bottom: 10vh !important;
     }
 }
 @media only screen and (max-width: 502px) {
