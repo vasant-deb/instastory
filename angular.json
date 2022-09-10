@@ -28,7 +28,8 @@
                 "src/assets/css/style.css",
                 "src/assets/css/custom.css",
                 "src/assets/css/mobile.css",
-                "src/assets/css/responsive.css"                
+                "src/assets/css/responsive.css",
+                "src/assets/css/profile.css"                
               ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
