@@ -27,6 +27,7 @@ export class ProfileComponent implements OnInit {
 })
 this.http.post<any>(environment.apiUrl + '/yourstory', {email: this.email}).subscribe(data => {
   this.viewstory=data.info;
+  console.log(this.viewstory);
 })
 //yourwriting
 

@@ -1,6 +1,14 @@
 .profilex button,img{
     border:0
 }
+.profilex .p-act span.likes {
+    top: -22px;
+    width: 20px;
+    font-weight: 700;
+    font-size: 16px;
+    left: 30px;
+    color: #a3a6aa;
+}
 .profilexx #f-name-l,#i-links{
     width:1px
 }
