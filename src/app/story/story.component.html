@@ -49,11 +49,10 @@
                                           <!-- start: .bottom -->
                                           <div class="bottom">
                                               <div class="post-excerpt">
-                        <a href="story/{{slug}}" class="thumb epcl-dropcap main-effect loaded"> 
-                                  <span class="fullimage cover" role="img" style="background-image: url({{image}});"></span> 
-                                  <span class="fullimage fake-layout cover" style="background-image: url({{image}});"></span>
-                                  </a>
-                                                  <p [innerHTML]="description"></p>
+                     
+                                  <img class="fullimage" role="img" src="{{image}}">
+                               
+                                       <p [innerHTML]="description" class="myfont"></p>
                             
                                                   <div class="clear"></div>
                                               </div>
@@ -62,9 +61,23 @@
                                                     <a href="" class="tag-link-{{i}}">{{tag}}</a>                
                                                   </div>
                                               </div>
-                        <div class="meta bottom hide-on-mobile"> <a href="" title="Save" class="author meta-info"> <i class="fa-solid fa-bookmark"></i></a></div>
-                      <div class="meta bottom hide-on-mobile"> <a href="" title="Report" class="author meta-info">  <i class="fa-solid fa-flag"></i></a></div>
-                          
+                                              <div class="meta bottom hide-on-mobile">
+                                                <div class="dropdownx">
+                                                  <input type="checkbox" id="dropdownxx">
+                                                  <label class="" for="dropdownxx">
+                                                   <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                  </label>
+                                                  <ul class="dropdown__items none">
+                                                     <li class="meta bottom hide-on-mobile"> <a href="#" title="Report" class="author meta-info">  <i class="fa-solid fa-flag"></i></a></li>
+                                                     <li class="meta bottom hide-on-mobile"> <a href="#" title="Save" class="author meta-info"> <i class="fa-solid fa-bookmark"></i></a></li>  
+                                                  </ul>
+                                                </div>  
+                                               </div>  
+
+
+                                              <div class="meta bottom "> <a href="#" title="Comments" class="author meta-info"><i class="fa-solid fa-comment"></i> 2</a></div>
+                                              <div class="meta bottom "> <a href="#" title="Views" class="author meta-info active">  <i class="fa-solid fa-heart"></i> 125</a></div>                                               
+                        
                                             
                         
                         
