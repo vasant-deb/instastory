@@ -22,9 +22,12 @@
     
        <hr>
      
-    <a href="/login"  class="navicon" title="Your Profile">
+    <a href="/login" *ngIf="token===null" class="navicon" title="Login">
         <i class="fa-solid fa-user"></i>
     </a>
+    <a href="/profile" *ngIf="token!==null" class="navicon" title="Your Profile">
+      <i class="fa-solid fa-user"></i>
+  </a>
     </div>
   </div>
 

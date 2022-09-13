@@ -15,12 +15,17 @@
         <i class="fa-solid fa-bell"></i>
         Notification
     </a>
-    <a href="#" >
-         <i class="fa-solid fa-book"></i>
-        Stories
-    </a>
+    
     <a href="#" >
          <i class="fa-solid fa-pen-to-square"></i>
         Write
+    </a>
+    <a href="/login" *ngIf="token===null">
+      <i class="fa-solid fa-user"></i>
+     Login
+    </a>
+    <a href="/profile" *ngIf="token!==null">
+      <i class="fa-solid fa-user"></i>
+     Profile
     </a>
   </div>

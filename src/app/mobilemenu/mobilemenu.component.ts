@@ -8,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class MobilemenuComponent implements OnInit {
 
   constructor() { }
-
+  token=localStorage.getItem('token');
   ngOnInit(): void {
+    this.token=this.token;
   }
 
 }

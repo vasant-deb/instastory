@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class LeftsidebarComponent implements OnInit {
 
   constructor() { }
-
+  token=localStorage.getItem('token');
   ngOnInit(): void {
   }
 
