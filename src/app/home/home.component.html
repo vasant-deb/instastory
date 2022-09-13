@@ -34,16 +34,7 @@
                                             </svg>
                                             <b>{{lis.first_name}} {{lis.last_name}}</b> - {{lis.created_at}}
                                          </span>
-                                         <div class="dropdownx">
-                                          <input type="checkbox" id="dropdownx-{{j}}">
-                                          <label class="" for="dropdownx-{{j}}">
-                                           <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                                          </label>
-                                          <ul class="dropdown__items none">
-                                             <li class="meta bottom hide-on-mobile"> <a href="#" title="Report" class="author meta-info">  <i class="fa-solid fa-flag"></i></a></li>
-                                             <li class="meta bottom hide-on-mobile"> <a href="#" title="Save" class="author meta-info"> <i class="fa-solid fa-bookmark"></i></a></li>  
-                                          </ul>
-                                        </div>  
+                                     
                                          <div class="clear"></div>
                                       </div>
                                       <!-- end: .meta -->
@@ -85,7 +76,20 @@
                                <div class="clear"></div>
                             </div>
                             <!-- end: .meta -->
-                          
+                            <div class="meta bottom hide-on-mobile">
+                            <div class="dropdownx">
+                              <input type="checkbox" id="dropdownxx-{{j}}">
+                              <label class="" for="dropdownxx-{{j}}">
+                               <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                              </label>
+                              <ul class="dropdown__items none">
+                                 <li class="meta bottom hide-on-mobile"> <a href="#" title="Report" class="author meta-info">  <i class="fa-solid fa-flag"></i></a></li>
+                                 <li class="meta bottom hide-on-mobile"> <a href="#" title="Save" class="author meta-info"> <i class="fa-solid fa-bookmark"></i></a></li>  
+                              </ul>
+                            </div>  
+                           </div>  
+                         
+
                           <div class="meta bottom hide-on-mobile"> <a href="#" title="Comments" class="author meta-info"><i class="fa-solid fa-comment"></i> {{lis.commentsCount}}</a></div>
                           <div class="meta bottom hide-on-mobile"> <a href="#" title="Views" class="author meta-info {{lis.likestatus}}">  <i class="fa-solid fa-heart"></i> {{lis.agree}}</a></div>
                        </div>
