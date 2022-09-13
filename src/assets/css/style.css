@@ -1428,7 +1428,7 @@ body{
   border-radius: 1px;
 }
 .tabs .content {
-  margin-top: 30px;
+  margin-top: 10px;
 }
 .tabs .content section {
   display: none;

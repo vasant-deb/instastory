@@ -36,7 +36,6 @@ status=null;
       password: new FormControl('', Validators.required),
     });
     this.http.post<any>(environment.apiUrl + '/verify', {token: this.token, email: this.email}).subscribe(data => {
-      debugger;
       this.status=data.status;
       if(this.status=="true"){
         console.log(this.status);
