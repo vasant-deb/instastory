@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard],},
     // otherwise redirect to home
-    { path: '**', redirectTo: '' },
+    { path: '**', redirectTo: 'home' },
     
 ];
 
