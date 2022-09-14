@@ -25,10 +25,24 @@ export class HomeComponent implements OnInit {
         else {
             this.http.post<any>(environment.apiUrl + '/homelogedin', {token: this.token}).subscribe(data => {
             this.story=data.stats;
-            console.log(this.story);
+           
         });        
             }
         
+        }
+        
+        like(storyId:any,likestatus:any){
+        
+   this.http.post<any>(environment.apiUrl + '/likeupdate', {token: this.token,slug:storyId,lstatus:likestatus}).subscribe(data => {
+   
+    this.http.post<any>(environment.apiUrl + '/homelogedin', {token: this.token}).subscribe(data => {
+      this.story=data.stats;
+      
+  });
+
+    
+        });   
+          
         }
   
 }
