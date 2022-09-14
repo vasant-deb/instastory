@@ -1,5 +1,5 @@
 <div class="mobile bottom-menu">
-    <a href="#" class="active">
+    <a  routerLink="home" routerLinkActive="active">
         <i class="fa-solid fa-house"></i>
       Home
     </a>
@@ -7,24 +7,24 @@
       <i class="fa-solid fa-magnifying-glass"></i>
       Search
     </a>
-    <a href="#" >
+    <a  routerLink="bookmark" routerLinkActive="active" >
          <i class="fa-solid fa-book-bookmark"></i>
         Bookmark
     </a>
-     <a href="#" >
+     <a  routerLink="notification" routerLinkActive="active" >
         <i class="fa-solid fa-bell"></i>
         Notification
     </a>
     
-    <a href="#" >
+    <a routerLink="write" routerLinkActive="active" >
          <i class="fa-solid fa-pen-to-square"></i>
         Write
     </a>
-    <a href="/login" *ngIf="token===null">
+    <a  routerLink="login" routerLinkActive="active" *ngIf="token===null">
       <i class="fa-solid fa-user"></i>
      Login
     </a>
-    <a href="/profile" *ngIf="token!==null">
+    <a  routerLink="profile" routerLinkActive="active" *ngIf="token!==null">
       <i class="fa-solid fa-user"></i>
      Profile
     </a>

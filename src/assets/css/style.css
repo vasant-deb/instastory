@@ -1791,3 +1791,6 @@ label.mystyle {
     font-weight: 500;
     position: absolute;
 }
+a.navicon.active {
+  color: var(--epcl-main-color);
+}
