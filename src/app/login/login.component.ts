@@ -63,7 +63,21 @@ status=null;
       this.registerForm!.get('password')!.value
     );
   }
-
-
-
+  myclass="";
+  mobile="";
+  mobilex="";
+public viewsignup(){
+  this.myclass="right-panel-active";
+}
+public viewsignin(){
+  this.myclass="";
+}
+public viewmobsignup(){
+  this.mobile="opacityx";
+  this.mobilex="activemobile";
+}
+public viewmobsignin(){
+  this.mobile="activemobile";
+  this.mobilex="opacityx";
+}
 }

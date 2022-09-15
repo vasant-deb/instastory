@@ -59,9 +59,20 @@
     }
 }
 @media only screen and (max-width: 750px) {
+    .containerx button.mobile{
+        display: block !important; 
+    }
+    .overlay-container{
+        display: none;
+    }
+    .containerx .sign-up-container {
+        width: 100% !important;
+    }
+    .containerx .sign-in-container {
+        width: 100% !important;
+    }
     .hide-on-mobile .dropdownx {
-            top: 0px !important;  
-            
+            top: 0px !important;     
     }
     
     .container{

@@ -1,12 +1,222 @@
-mat-card.mat-card.mat-focus-indicator.login {
-    margin: 60px 30px 0px 30px;
+
+
+.containerx h1 {
+    font-weight: bold;
+    margin: 0px auto;
 }
-mat-card.mat-card.mat-focus-indicator.register {
-    margin: 60px 30px 0px 30px;
+.containerx p {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: .5px;
+    margin: 20px 0 30px;
 }
-mat-card.mat-card.mat-focus-indicator.register {
-    padding-bottom: 100px;
+
+.containerx span {
+    font-size: 12px;
 }
-app-login.ng-star-inserted {
+
+.containerx a {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0;
+}
+
+.containerx {
+    overflow: hidden;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgb(0 0 0 / 20%), 0 10px 10px rgb(0 0 0 / 20%);
+    position: static;
+}
+.right-panel-active .sign-in-container{
+    display: none;
+}
+.containerx.right-panel-active {
+    overflow: hidden;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgb(0 0 0 / 20%), 0 10px 10px rgb(0 0 0 / 20%);
+    position: static;
+}
+.containerx .form-container form {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    padding:  0 50px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.containerx .social-container {
+    margin: 20px 0;
+}
+
+.containerx .social-container a {
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    height: 40px;
+    width: 40px;
+}
+
+.containerx .form-container input {
+    background: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
     width: 100%;
+}
+
+.containerx button {
+    border-radius: 20px;
+    border: 1px solid #ff4b2b;
+    background: #ff445c;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+}
+
+.containerx button:active {
+    transform: scale(.95);
+}
+
+.containerx button:focus {
+    outline: none;
+}
+
+.containerx button.ghost {
+    background: transparent;
+    border-color: #fff;
+}
+
+.containerx .form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all .6s ease-in-out;
+}
+
+.containerx .sign-in-container {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.containerx .sign-up-container {
+    left: 0;
+    width: 50%;
+    z-index: 1;
+    opacity: 0;
+}
+
+.containerx .overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform .6s ease-in-out;
+    z-index: 100;
+}
+
+.containerx .overlayx {
+    background: #ff416c;
+    background: linear-gradient(to right, #ff4b2b, #ff416c) no-repeat 0 0 / cover;
+    color: #fff;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateY(0);
+    transition: transform .6s ease-in-out;
+}
+
+.containerx .overlay-panel {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+    height: 100%;
+    width: 50%;
+    text-align: center;
+    transform: translateY(0);
+    transition: transform .6s ease-in-out;
+}
+
+.containerx .overlay-right {
+    right: 0;
+    transform: translateY(0);
+}
+
+.containerx .overlay-left {
+    transform: translateY(-20%);
+}
+
+/* Move signin to right */
+.containerx.right-panel-active .sign-in-container {
+    transform: translateY(100%);
+}
+
+/* Move overlay to left */
+.containerx.right-panel-active .overlay-container {
+    transform: translateX(-100%);
+}
+
+/* Bring signup over signin */
+.containerx.right-panel-active .sign-up-container {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+}
+
+/* Move overlay back to right */
+.containerx.right-panel-active .overlayx {
+    transform: translateX(50%);
+}
+
+/* Bring back the text to center */
+.containerx.right-panel-active .overlay-left {
+    transform: translateY(0);
+}
+
+/* Same effect for right */
+.containerx.right-panel-active .overlay-right {
+    transform: translateY(20%);
+}
+
+.containerx .icons {
+	display: flex;
+	width: 30px;
+	height: 30px;
+	letter-spacing: 15px;
+	align-items: center;
+}
+.containerx button.mobile{
+    display: none; 
+    background-color: white; 
+    color: black; 
+    border: 2px solid #ff8800;
+    margin:15px auto;
+    padding: 10px;
+}
+.activemobile{
+    display: none;
+}
+.form-container.sign-up-container.opacityx {
+    opacity: 1 !important;
 }
