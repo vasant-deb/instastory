@@ -1794,3 +1794,6 @@ label.mystyle {
 a.navicon.active {
   color: var(--epcl-main-color);
 }
+article.default.classic-large.index-0.odd.primary-cat-4.grid-100.tablet-grid-100.post-76.post.type-post.status-publish.format-standard.has-post-thumbnail.hentry.category-music.category-technology.category-travel.tag-country.tag-image {
+  overflow: visible !important;
+}

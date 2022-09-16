@@ -8,7 +8,13 @@ import { AuthGuard } from './helpers/auth.guard';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'story/:slug', component: StoryComponent },
+  { path: 'story/:slug', component: StoryComponent,
+     data: {
+    title: 'Title for Home Component',
+    descrption: 'Description of Home Component',
+    ogTitle: 'Description of Home Component for social media',
+          }
+},
   { path: 'login', component: LoginComponent },
   {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard],},
     // otherwise redirect to home

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../api.service';
 import {ActivatedRoute} from "@angular/router";
 import { HttpClient } from '@angular/common/http';
+import { Title,Meta, MetaDefinition } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-story',
   templateUrl: './story.component.html',
@@ -9,7 +11,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class StoryComponent implements OnInit {
   
-  constructor(private api:ApiService,private route: ActivatedRoute,private http:HttpClient) {}
+  constructor(private api:ApiService,private route: ActivatedRoute,private http:HttpClient, private titleService: Title,
+    private metaService: Meta) {}
   title=null;
   tags='a,b';
   created_at=null;
@@ -35,7 +38,14 @@ export class StoryComponent implements OnInit {
       this.slug=data.stats.slug;
       
       this.image=data.stats.image;
-  
+      
+      this.titleService.setTitle(data.stats.title); // <-- Update the title
+      
+      this.metaService.updateTag({ 
+        name: 'description',
+        content: data.stats.description.trim()
+    });
+
   })
 
 
