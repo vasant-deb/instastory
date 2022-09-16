@@ -1,10 +1,7 @@
 div#js-licensing {
     display: none !important;
 }
-#defaultRTE{
-    width:400px;
-    height:auto;
-}
+
 main.profilex {
     overflow: visible; /* Hide scrollbars */
 }
