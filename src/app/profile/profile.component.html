@@ -82,12 +82,16 @@
               <ejs-richtexteditor #exampleRTE [toolbarSettings]="customToolbar">
                 <ng-template #valueTemplate>
                   <h3>Your Heading</h3>
+                  <img src="https://www.haleeducation.com/wp-content/uploads/2021/10/courses-in-creative-writing.jpg"/>
                   <p> Write whatever you feel like.....</p>
                  
                 </ng-template>
               </ejs-richtexteditor>
               <button ej-button id='button' class="e-control e-btn btn btn-light" (click)="getFormattedContent()">Post</button>
               <br>
+              <br>
+              <br>
+              
          <h1>Your Stories</h1>
             <div class="post"  *ngFor="let liss of viewstory">
               <div class="tb">
