@@ -22,9 +22,9 @@ export class AuthenticationService {
   }
 
 
-  public register(firstname: string,lastname: string, email: string, password: string): void {
+  public register(firstname: string,lastname: string, email: string, gender: string, password: string): void {
     this.authenticationClient
-      .register(firstname,lastname, email, password)
+      .register(firstname,lastname, email, gender, password)
       .subscribe((token) => {
         localStorage.setItem(this.emailKey, email);
         localStorage.setItem(this.tokenKey, token);

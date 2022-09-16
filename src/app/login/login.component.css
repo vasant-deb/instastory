@@ -220,3 +220,6 @@
 .form-container.sign-up-container.opacityx {
     opacity: 1 !important;
 }
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }

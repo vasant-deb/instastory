@@ -9,11 +9,34 @@
               <a class="social"><i class="fab fa-linkedin-in"></i></a>
           </div>
           <span>or use your email for registration</span>
-          <input matInput placeholder="Enter Your First Name" formControlName="firstname" />
+          <input matInput placeholder="Enter Your First Name" id="firstname" formControlName="firstname" />
+          <div *ngIf="f['firstname'].touched && f['firstname'].invalid" class="alert alert-danger">
+            <div *ngIf="f['firstname'].errors && f['firstname'].errors['required']">FirstName is required.</div>
+            <div *ngIf="f['firstname'].errors && f['firstname'].errors['minlength']">FirstName should be 3 character.</div>
+        </div>
           <input matInput placeholder="Enter Your Last Name" formControlName="lastname" />
+          <div *ngIf="f['lastname'].touched && f['lastname'].invalid" class="alert alert-danger">
+            <div *ngIf="f['lastname'].errors && f['lastname'].errors['required']">LastName is required.</div>
+            <div *ngIf="f['lastname'].errors && f['lastname'].errors['minlength']">LastName should be 3 character.</div>
+        </div>
           <input matInput placeholder="Enter Your Email Address" type="email" formControlName="email" />
+          <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+            Invalid Email Format
+            <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
+        </div>
+            <mat-radio-group formControlName="gender" aria-label="Select Your Gender">
+            <mat-radio-button value="Male">Male</mat-radio-button>
+            <mat-radio-button value="Female">Female</mat-radio-button>
+            <mat-radio-button value="Other">Other</mat-radio-button>
+          </mat-radio-group>
+        <div *ngIf="f['gender'].touched && f['gender'].invalid" class="alert alert-danger">
+          <div *ngIf="f['gender'].errors && f['gender'].errors['required']">Gender is required.</div>
+      </div>
           <input matInput placeholder="Enter Your Password" type="password" formControlName="password" />
-          <button (click)="onRegSubmit()">Sign Up</button>
+          <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+            <div *ngIf="f['password'].errors && f['password'].errors['required']">Password is required.</div>
+        </div>
+          <button  [disabled]="registerForm.invalid" (click)="onRegSubmit()">Sign Up</button>
           <button class="mobile" (click)="viewmobsignin()">Already Have an Account</button>
       </form>
   </div>
@@ -27,10 +50,17 @@
               <a class="social"><i class="fab fa-linkedin-in"></i></a>
           </div>
           <span>or use your account</span>
-          <input matInput placeholder="Enter Your Email Address" formControlName="email" />
-          <input matInput placeholder="Enter Your Password" type="password" formControlName="password" />
+          <input required matInput placeholder="Enter Your Email Address" type="email" formControlName="email" />
+          <div *ngIf="l['email'].touched && l['email'].invalid" class="alert alert-danger">
+            Invalid Email Format
+            <div *ngIf="l['email'].errors && l['email'].errors['required']">Email is required.</div>
+        </div>
+          <input required matInput placeholder="Enter Your Password" type="password" formControlName="password" />
+          <div *ngIf="l['password'].touched && l['password'].invalid" class="alert alert-danger">
+          <div *ngIf="l['password'].errors && l['password'].errors['required']">Password is required.</div>
+        </div>
           <a>Forgots your password?</a>
-          <button (click)="onLoginSubmit()">Sign In</button>
+          <button  [disabled]="loginForm.invalid" (click)="onLoginSubmit()">Sign In</button>
           <button class="mobile" (click)="viewmobsignup()">Don't Have an Account</button>
       </form>
   </div>

@@ -24,6 +24,7 @@ export class AuthenticationClient {
     firstname: string,
     lastname: string,
     email: string,
+    gender: string,
     password: string
   ): Observable<string> {
     return this.http.post(
@@ -32,6 +33,7 @@ export class AuthenticationClient {
         firstname: firstname,
         lastname:lastname,
         email: email,
+        gender:gender,
         password: password,
       },
       { responseType: 'text' }

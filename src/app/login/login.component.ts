@@ -7,6 +7,7 @@ import {ApiService} from '../api.service';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -29,10 +30,11 @@ status=null;
       firstname: new FormControl('', Validators.required),
       lastname: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
+      gender: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
     });
     this.loginForm = new FormGroup({
-      email: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', Validators.required),
     });
     this.http.post<any>(environment.apiUrl + '/verify', {token: this.token, email: this.email}).subscribe(data => {
@@ -60,8 +62,18 @@ status=null;
       this.registerForm.get('firstname')!.value,
       this.registerForm.get('lastname')!.value,
       this.registerForm.get('email')!.value,
+      this.registerForm.get('gender')!.value,
       this.registerForm!.get('password')!.value
     );
+  }
+
+
+
+  get f(){
+    return this.registerForm.controls;
+  }
+  get l(){
+    return this.loginForm.controls;
   }
   myclass="";
   mobile="";

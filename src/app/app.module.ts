@@ -8,7 +8,6 @@ import { HomeComponent } from './home/home.component';
 import { RightsidebarComponent } from './rightsidebar/rightsidebar.component';
 import { MobilemenuComponent } from './mobilemenu/mobilemenu.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
 import { StoryComponent } from './story/story.component';
 //import { MaterialComponent } from './material/material.component';
 //import { ServicesComponent } from './services/services.component';
@@ -23,6 +22,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatRadioModule } from '@angular/material/radio';
+import { RichTextEditorModule } from '@syncfusion/ej2-angular-richtexteditor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +39,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent
   ],
   imports: [
+    RichTextEditorModule,
+    MatRadioModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule,
