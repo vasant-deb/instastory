@@ -24,6 +24,10 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatRadioModule } from '@angular/material/radio';
 import { RichTextEditorModule } from '@syncfusion/ej2-angular-richtexteditor';
+import { BookmarkComponent } from './bookmark/bookmark.component';
+import { NotificationComponent } from './notification/notification.component';
+import { WriteComponent } from './write/write.component';
+import { YourstoryComponent } from './yourstory/yourstory.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import { RichTextEditorModule } from '@syncfusion/ej2-angular-richtexteditor';
     ProfileComponent,
    // MaterialComponent,
   //  ServicesComponent,
-    LoginComponent
+    LoginComponent,
+   BookmarkComponent,
+   NotificationComponent,
+   WriteComponent,
+   YourstoryComponent
   ],
   imports: [
     RichTextEditorModule,

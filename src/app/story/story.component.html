@@ -1,111 +1,98 @@
 <div class="row center">
     <div class="col-md-12">
-  
-    
-    <div class="content">
-     
+       <div class="content">
           <section>
-
-          <div class="articles classic">
-          <article class="default classic-large index-0 odd primary-cat-4 grid-100 tablet-grid-100 post-76 post type-post status-publish format-standard has-post-thumbnail hentry category-music category-technology category-travel tag-country tag-image">
-                                                      <header>
-                                                          <!-- start: .post-format-image -->
-                                                          <div class="post-format-image post-style-small-image">
-                                                              <!-- start: .featured-image -->
-                                                              <div class="featured-image epcl-flex">
-                                                                  <!-- Loop: Small Image Style -->
-  
-          
-                                                                  <!-- Loop: Standard Image Style -->
-                                                                  <!-- Loop: Text only style -->
-                                                                  <div class="info">
-                                                                      <h1 class="main-title title underline-effect large">
-                                    <a href="">
-                                   {{title}}</a>
-                                    </h1>
-                                                                      <div class="hide-on-mobile">
-                                                                          <!-- start: .meta -->
-                                                                          <div class="meta"> <time class="meta-info" datetime="2019-08-15">{{created_at | date: 'MMMM dd, yyyy'}}</time>
-                                                                              
-                                        <a href="" class="comments meta-info icon mobile" title="1 Comment"> 
-                                        <svg><use xlink:href="#comments-outline-icon"></use></svg> <span class="comment-count">1</span>
-                                        </a> 
-                                        <span class="views-counter meta-info icon comments" title="{{views}} Views">
-                                        <svg><use xlink:href="#views-outline-icon"></use></svg> {{views}}</span>
-                                        <span class="views-counter meta-info icon comments rightx" title="{{first_name}} {{last_name}}">
-                                        <svg><use xlink:href="#views-outline-icon"></use></svg> {{first_name}} {{last_name}}</span>
-                                                                              <div class="clear"></div>
-                                                                      </div>
-                                                                      <!-- end: .meta -->
-                                                                  </div>
+             <div class="articles classic">
+                <article class="default classic-large index-0 odd primary-cat-4 grid-100 tablet-grid-100 post-76 post type-post status-publish format-standard has-post-thumbnail hentry category-music category-technology category-travel tag-country tag-image">
+                   <header>
+                      <!-- start: .post-format-image -->
+                      <div class="post-format-image post-style-small-image">
+                         <!-- start: .featured-image -->
+                         <div class="featured-image epcl-flex">
+                            <!-- Loop: Small Image Style -->
+                            <!-- Loop: Standard Image Style -->
+                            <!-- Loop: Text only style -->
+                            <div class="info">
+                               <h1 class="main-title title underline-effect large">
+                                  <a href="">
+                                  {{title}}</a>
+                               </h1>
+                               <div class="hide-on-mobile">
+                                  <!-- start: .meta -->
+                                  <div class="meta">
+                                     <time class="meta-info" datetime="2019-08-15">{{created_at | date: 'MMMM dd, yyyy'}}</time>
+                                     <a href="" class="comments meta-info icon mobile" title="1 Comment">
+                                        <svg>
+                                           <use xlink:href="#comments-outline-icon"></use>
+                                        </svg>
+                                        <span class="comment-count">1</span>
+                                     </a>
+                                     <span class="views-counter meta-info icon comments" title="{{views}} Views">
+                                        <svg>
+                                           <use xlink:href="#views-outline-icon"></use>
+                                        </svg>
+                                        {{views}}
+                                     </span>
+                                     <span class="views-counter meta-info icon comments rightx" title="{{first_name}} {{last_name}}">
+                                        <svg>
+                                           <use xlink:href="#views-outline-icon"></use>
+                                        </svg>
+                                        {{first_name}} {{last_name}}
+                                     </span>
+                                     <div class="clear"></div>
                                   </div>
-                                                          </div>
-                                                          <!-- end: .featured-image -->
-                                                         
-                                          </div>
-                                          <!-- end: .post-format-image -->
-                                          <div class="clear"></div>
-                                          </header>
-                                          <!-- start: .bottom -->
-                                          <div class="bottom">
-                                              <div class="post-excerpt">
-                     
-                                  <img class="fullimage" role="img" src="{{image}}">
-                               
-                                       <p [innerHTML]="description" class="myfont"></p>
-                            
-                                                  <div class="clear"></div>
-                                              </div>
-                                              <div class="tags">
-                                                  <div class="tags" *ngFor="let tag of tags?.split(',') ; let i = index">
-                                                    <a href="" class="tag-link-{{i}}">{{tag}}</a>                
-                                                  </div>
-                                              </div>
-                                              <div class="meta bottom hide-on-mobile">
-                                                <div class="dropdownx">
-                                                  <input type="checkbox" id="dropdownxx">
-                                                  <label class="" for="dropdownxx">
-                                                   <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                                                  </label>
-                                                  <ul class="dropdown__items none">
-                                                     <li class="meta bottom hide-on-mobile"> <a href="#" title="Report" class="author meta-info">  <i class="fa-solid fa-flag"></i></a></li>
-                                                     <li class="meta bottom hide-on-mobile"> <a href="#" title="Save" class="author meta-info"> <i class="fa-solid fa-bookmark"></i></a></li>  
-                                                  </ul>
-                                                </div>  
-                                               </div>  
-
-
-                                              <div class="meta bottom "> <a href="#" title="Comments" class="author meta-info"><i class="fa-solid fa-comment"></i> 2</a></div>
-                                              <div class="meta bottom "> <a href="#" title="Views" class="author meta-info active">  <i class="fa-solid fa-heart"></i> 125</a></div>                                               
-                        
-                                            
-                        
-                        
-                                              <div class="clear"></div> 
+                                  <!-- end: .meta -->
+                               </div>
+                            </div>
+                         </div>
+                         <!-- end: .featured-image -->
+                      </div>
+                      <!-- end: .post-format-image -->
+                      <div class="clear"></div>
+                   </header>
+                   <!-- start: .bottom -->
+                   <div class="bottom">
+                      <div class="post-excerpt">
+                         <img class="fullimage" role="img" src="{{image}}">
+                         <p [innerHTML]="description" class="myfont"></p>
+                         <div class="clear"></div>
+                      </div>
+                      <div class="tags">
+                         <div class="tags" *ngFor="let tag of tags?.split(',') ; let i = index">
+                            <a href="" class="tag-link-{{i}}">{{tag}}</a>                
+                         </div>
+                      </div>
+                      <!---  <div class="meta bottom hide-on-mobile">
+                         <div class="dropdownx">
+                           <input type="checkbox" id="dropdownxx">
+                           <label class="" for="dropdownxx">
+                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                           </label>
+                           <ul class="dropdown__items none">
+                              <li class="meta bottom hide-on-mobile"> <a href="#" title="Report" class="author meta-info">  <i class="fa-solid fa-flag"></i></a></li>
+                              <li class="meta bottom hide-on-mobile"> <a href="#" title="Save" class="author meta-info"> <i class="fa-solid fa-bookmark"></i></a></li>  
+                           </ul>
+                         </div>  
+                         </div>  
+                         
+                         
+                         <div class="meta bottom "> <a href="#" title="Comments" class="author meta-info"><i class="fa-solid fa-comment"></i> 2</a></div> -->
+                      <div class="meta bottom ">
+                        <a *ngIf="token===null" href="/login" title="Likes" class="author meta-info {{likestatus}}">  
+                            <i class="fa-solid fa-heart"></i> {{agree}}</a>
+                            <a *ngIf="token!==null" (click)="like(slug,likestatus)" title="Likes" class="author meta-info {{likestatus}}">  
+                               <i class="fa-solid fa-heart"></i> {{agree}}</a>
                         </div>
-                                      <!-- end: .right -->
-                                      <div class="clear"></div>
-                                      </article>
-                                 <hr>
-            
-            </div>  
-      
-          
-        </section>
-
-
-
-
-
-
-      
+                     
+                    
+                      <div class="clear"></div>
+                   </div>
+                   <!-- end: .right -->
+                   <div class="clear"></div>
+                </article>
+                <hr>
+             </div>
+          </section>
+       </div>
     </div>
-
-
-
-
-
-  
-   
-   </div>
-   </div>
+ </div>
