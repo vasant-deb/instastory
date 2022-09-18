@@ -21,5 +21,7 @@ export class MobilemenuComponent implements OnInit {
       this.navmenut="Profile";
     }
   }
-
+  viewmore(){
+    alert("hello");
+  }
 }

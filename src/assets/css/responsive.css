@@ -160,9 +160,10 @@
         padding: 20px 0px 80px 0px;
         margin: 0px 0px 0px 0px;
     }
+   
     .center > div {
-        width: 140%;
-        mAX-WIDTH: 140%;
+        width: 145%;
+        mAX-WIDTH: 145%;
     }
     
     p {

@@ -1,129 +1,236 @@
-<link href="https://cdn.syncfusion.com/ej2/ej2-richtexteditor/styles/material.css" rel="stylesheet" />
-<link href="https://cdn.syncfusion.com/ej2/ej2-base/styles/material.css" rel="stylesheet" />
-<link href="https://cdn.syncfusion.com/ej2/ej2-dropdowns/styles/material.css" rel="stylesheet" />
-<link href="https://cdn.syncfusion.com/ej2/ej2-lists/styles/material.css" rel="stylesheet" />
-<link href="https://cdn.syncfusion.com/ej2/ej2-popups/styles/material.css" rel="stylesheet" />
-<link href="https://cdn.syncfusion.com/ej2/ej2-buttons/styles/material.css" rel="stylesheet" />
-<link href="https://cdn.syncfusion.com/ej2/ej2-splitbuttons/styles/material.css" rel="stylesheet" />
-<link href="https://cdn.syncfusion.com/ej2/ej2-inputs/styles/material.css" rel="stylesheet" />
-<link href="https://cdn.syncfusion.com/ej2/ej2-navigations/styles/material.css" rel="stylesheet" />
 
+    <div class="row center profilex" *ngIf="viewuser">
+      <div class="cardx containerx">
+        <div class="bg"> 
+<div class="profile-pic">
+    <img src="{{viewuser.image}}">
+</div>
+            <p class="p"><b>{{viewuser.first_name}} {{viewuser.last_name}} </b></p>
+            <p class="p">{{viewuser.bio}} </p>
+            <p class="p">{{viewuser.country}}, {{viewuser.state}} </p>
+            <div class="user-data">
+                <div class="post"><div class="num">250</div><div class="txt">post</div></div>
+                <div class="followers"><div class="num">2500</div><div class="txt">Followers</div></div>
+                <div class="following"><div class="num">1500</div><div class="txt">Likes</div></div>
+            </div>
+            <div class="cardx-footer">
+        <button class="btn-follow">Follow</button><br>
 
-<main *ngIf="viewuser" class="profilex">
-    
-    
-    <div id="profile-upper">
-      <div id="profile-banner-image">
-        <img src="https://beta.autoreport.space/storyapi/public/uploads/cover.jpg" alt="Banner image">
-      </div>
-      <div id="profile-d">
-        <div id="profile-pic">
-          <img src="{{viewuser.image}}">
-        </div>
-        <div id="u-name">{{viewuser.first_name}} {{viewuser.last_name}} </div>
        
-        
-      </div>
-      <div id="black-grd"></div>
     </div>
-    <div id="main-content">
-      <div class="tb">
-        <div class="td" id="l-col">
-          <div class="l-cnt">
-            <div class="cnt-label">
-              <i class="l-i" id="l-i-i"></i>
-              <span>Bio</span>
-              <div class="lb-action"><i class="material-icons">edit</i></div>
-            </div>
-            <div id="i-box">
-              <div id="intro-line">{{viewuser.profile}}</div>
-              <div id="u-occ">{{viewuser.bio}}</div>
-              <div id="u-loc"><i class="material-icons">location_on</i><b>{{viewuser.state}}</b>, <b>{{viewuser.country}}</b></div>
-            </div>
-          </div>
-          <div class="l-cnt l-mrg">
-            <div class="cnt-label">
-              <i class="l-i" id="l-i-p"></i>
-              <span>Bookmarks</span>
-          
-            </div>
-           
-            <div class="post postnew"  *ngFor="let lis of viewbookmarks">
-                <div class="tb">
-                
-                  <div class="td p-r-hdr newseting">
-                    <div class="p-u-info">
-                      <a href="story/{{lis.slug}}">{{lis.title}}</a> as Anonymous
-                    </div>
-                    <div class="p-dt">
-                      <i class="material-icons">calendar_today</i>
-                      <span>{{lis.created_at}}</span>
-                    </div>
-                  </div>
-              
-                </div>
-                <p [innerHTML]="(lis.description.length>6)? (lis.description | slice:0:150)+'..':(lis.description)"></p>
-                <hr aria-hidden="true" class="lc">
-              </div>
-
-
-          </div>
-        
-         
-        </div>
-        <div class="td" id="m-col">
-          
-          
-          <div>
-           
+</div>
+</div>
+    </div>
+    
+      <!--START-->
+      <div class="row center">
+        <div class="col-md-12">
+           <div class="tabs">
             
-             
-
-              <ejs-richtexteditor #exampleRTE [toolbarSettings]="customToolbar">
-                <ng-template #valueTemplate>
-                  <h3>Your Heading</h3>
-                  <img src="https://www.haleeducation.com/wp-content/uploads/2021/10/courses-in-creative-writing.jpg"/>
-                  <p> Write whatever you feel like.....</p>
+              <input type="radio" id="tab2" name="tab-control" checked>
+              <input type="radio" id="tab3" name="tab-control">  
+              <ul>
+                 <li title="Delivery Contents"><label class="mystyle" for="tab2" role="button">Saved</label></li>
+                 <li title="Shipping"><label for="tab3" class="mystyle" role="button">Your Stories</label></li>
+              </ul>
+              <div class="content">
                  
-                </ng-template>
-              </ejs-richtexteditor>
-              <button ej-button id='button' class="e-control e-btn btn btn-light" (click)="getFormattedContent()">Post</button>
-              <br>
-              <br>
-              <br>
-              
-         <h1>Your Stories</h1>
-            <div class="post"  *ngFor="let liss of viewstory">
-              <div class="tb">
-                <a href="story/{{liss.slug}}" class="td p-p-pic"><img src="{{liss.image}}" alt="Rajeev's profile pic"></a>
-                <div class="td p-r-hdr">
-                  <div class="p-u-info">
-                    <a href="story/{{liss.slug}}">{{liss.title}}</a> as Anonymous
-                  </div>
-                  <div class="p-dt">
-                    <i class="material-icons">calendar_today</i>
-                    <span>{{liss.created_at}}</span>
-                  </div>
-                </div>
-                <div class="td p-opt"><i class="material-icons">keyboard_arrow_down</i></div>
-              </div>
-              <p [innerHTML]="(liss.description.length>6)? (liss.description | slice:0:150)+'..':(liss.description)"></p>
-              <div>
-                <div class="p-acts">
-                  <div class="p-act like"><i class="material-icons">thumb_up_alt</i><span class="likes">{{liss.agree}}</span></div>
-                  <div class="p-act comment"><i class="material-icons">comment</i><span>1</span></div>
-                  <div class="p-act share"><i class="material-icons">reply</i></div>
-                </div>
-                <hr aria-hidden="true" class="lc">
-              </div>
-             
-            </div>
-
-          </div>
-        
-        </div>
+                 <section>
+                    <div class="articles classic">
+                       <article *ngIf="story" class="default classic-large index-0 odd primary-cat-4 grid-100 tablet-grid-100 post-76 post type-post status-publish format-standard has-post-thumbnail hentry category-music category-technology category-travel tag-country tag-image">
+                          <div class="newpost" *ngFor="let lis of story ; let j = index">
+                             <header>
+                                <!-- start: .post-format-image -->
+                                <div class="post-format-image post-style-small-image">
+                                   <!-- start: .featured-image -->
+                                   <div class="featured-image epcl-flex">
+                                      <!-- Loop: Small Image Style -->
+                                      <div class="info">
+                                         <div class="hide-on-mobile">
+                                            <!-- start: .meta -->
+                                            <div class="meta">
+                                               <span class="views-counter meta-info icon comments" title="{{lis.first_name}} {{lis.last_name}}">
+                                                  <svg>
+                                                     <use xlink:href="#views-outline-icon"></use>
+                                                  </svg>
+                                                  <b>{{lis.firstname}} {{lis.lastname}}</b> - {{lis.created_at}}
+                                               </span>
+                                           
+                                               <div class="clear"></div>
+                                            </div>
+                                            <!-- end: .meta -->
+                                         </div>
+                                      </div>
+                                      <!-- Loop: Standard Image Style -->
+                                      <!-- Loop: Text only style -->
+                                   </div>
+                                   <!-- end: .featured-image -->
+                                </div>
+                                <!-- end: .post-format-image -->
+                                <div class="clear"></div>
+                             </header>
+                             <!-- start: .bottom -->
+                             <div class="bottom">
+                                <div class="post-excerpt">
+                                   <a href="story/{{lis.slug}}" class="thumb epcl-dropcap main-effect loaded"> 
+                                   <span class="fullimage cover" role="img" style="background-image: url({{lis.image}});"></span> 
+                                   <span class="fullimage fake-layout cover" style="background-image: url({{lis.image}});"></span>
+                                   </a>
+                                   <h1 class="main-title title underline-effect large">
+                                      <a class="titlestyle" href="story/{{lis.slug}}">
+                                      {{lis.title}}</a>
+                                   </h1>
+                                   <p class="mystylenew" [innerHTML]="(lis.description.length>6)? (lis.description | slice:0:150)+'..':(lis.description)"></p>
+                                   <div class="clear"></div>
+                                </div>
+                              <!---  <div class="tags">
+                                   <div class="tags" *ngFor="let tag of lis.tags?.split(',') ; let i = index">
+                                      <a href="#" class="tag-link-{{i}}">{{tag}}</a>                
+                                   </div>
+                                </div> -->
+                                <div class="mobile">
+                                  <!-- start: .meta -->
+                                     <span class="views-counter meta-info icon comments" title="{{lis.first_name}} {{lis.last_name}}">
+                                        <b>{{lis.firstname}} {{lis.lastname}}</b> - {{lis.created_at}}
+                                     </span>
+                                    
+                                     <div class="clear"></div>
+                                  </div>
+                                  <!-- end: .meta -->
+                             <!----    <div class="meta bottom hide-on-mobile">
+                                  <div class="dropdownx">
+                                    <input type="checkbox" id="dropdownxx-{{j}}">
+                                    <label class="" for="dropdownxx-{{j}}">
+                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                    </label>
+                                    <ul class="dropdown__items none">
+                                       <li class="meta bottom hide-on-mobile"> 
+                                          <a href="#" title="Report" class="author meta-info">  <i class="fa-solid fa-flag"></i></a></li>
+                                       <li class="meta bottom hide-on-mobile"> 
+                                          <a href="#" title="Save" class="author meta-info"> <i class="fa-solid fa-bookmark"></i></a></li>  
+                                    </ul>
+                                  </div>  
+                                 </div>  
+                               
+      
+                                <div class="meta bottom hide-on-mobile"> 
+                                 <a href="#" title="Comments" class="author meta-info">
+                                    <i class="fa-solid fa-comment"></i> {{lis.commentsCount}}</a></div> -->
+                                <div class="meta bottom hide-on-mobile"> 
+                                 <a *ngIf="token===null" href="/login" title="Likes" class="author meta-info {{lis.likestatus}}">  
+                                    <i class="fa-solid fa-heart"></i> {{lis.agree}}</a>
+                                    <a *ngIf="token!==null" (click)="like(lis.slug,lis.likestatus)" title="Likes" class="author meta-info {{lis.likestatus}}">  
+                                       <i class="fa-solid fa-heart"></i> {{lis.agree}}</a>
+                                 </div>
+                             </div>
+                             <!-- end: .right -->
+                             <div class="clear"></div>
+                             <hr class="lc" aria-hidden="true">
+                          </div>
+                       </article>
+                    </div>
+                 </section>
+                 <section>
+                    <div class="articles classic">
+                        <article *ngIf="viewstory" class="default classic-large index-0 odd primary-cat-4 grid-100 tablet-grid-100 post-76 post type-post status-publish format-standard has-post-thumbnail hentry category-music category-technology category-travel tag-country tag-image">
+                           <div class="newpost" *ngFor="let lis of viewstory ; let j = index">
+                              <header>
+                                 <!-- start: .post-format-image -->
+                                 <div class="post-format-image post-style-small-image">
+                                    <!-- start: .featured-image -->
+                                    <div class="featured-image epcl-flex">
+                                       <!-- Loop: Small Image Style -->
+                                       <div class="info">
+                                          <div class="hide-on-mobile">
+                                             <!-- start: .meta -->
+                                             <div class="meta">
+                                                <span class="views-counter meta-info icon comments" title="{{lis.first_name}} {{lis.last_name}}">
+                                                   <svg>
+                                                      <use xlink:href="#views-outline-icon"></use>
+                                                   </svg>
+                                                   <b>{{lis.first_name}} {{lis.last_name}}</b> - {{lis.created_at}}
+                                                </span>
+                                            
+                                                <div class="clear"></div>
+                                             </div>
+                                             <!-- end: .meta -->
+                                          </div>
+                                       </div>
+                                       <!-- Loop: Standard Image Style -->
+                                       <!-- Loop: Text only style -->
+                                    </div>
+                                    <!-- end: .featured-image -->
+                                 </div>
+                                 <!-- end: .post-format-image -->
+                                 <div class="clear"></div>
+                              </header>
+                              <!-- start: .bottom -->
+                              <div class="bottom">
+                                 <div class="post-excerpt">
+                                    <a href="story/{{lis.slug}}" class="thumb epcl-dropcap main-effect loaded"> 
+                                    <span class="fullimage cover" role="img" style="background-image: url({{lis.image}});"></span> 
+                                    <span class="fullimage fake-layout cover" style="background-image: url({{lis.image}});"></span>
+                                    </a>
+                                    <h1 class="main-title title underline-effect large">
+                                       <a class="titlestyle" href="story/{{lis.slug}}">
+                                       {{lis.title}}</a>
+                                    </h1>
+                                    <p class="mystylenew" [innerHTML]="(lis.description.length>6)? (lis.description | slice:0:150)+'..':(lis.description)"></p>
+                                    <div class="clear"></div>
+                                 </div>
+                                 <div class="tags">
+                                    <div class="tags" *ngFor="let tag of lis.tags?.split(',') ; let i = index">
+                                       <a href="#" class="tag-link-{{i}}">{{tag}}</a>                
+                                    </div>
+                                 </div>
+                                 <div class="mobile">
+                                   <!-- start: .meta -->
+                                      <span class="views-counter meta-info icon comments" title="{{lis.first_name}} {{lis.last_name}}">
+                                         <b>{{lis.first_name}} {{lis.last_name}}</b> - {{lis.created_at}}
+                                      </span>
+                                     
+                                      <div class="clear"></div>
+                                   </div>
+                                   <!-- end: .meta -->
+                              <!----    <div class="meta bottom hide-on-mobile">
+                                   <div class="dropdownx">
+                                     <input type="checkbox" id="dropdownxx-{{j}}">
+                                     <label class="" for="dropdownxx-{{j}}">
+                                      <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                     </label>
+                                     <ul class="dropdown__items none">
+                                        <li class="meta bottom hide-on-mobile"> 
+                                           <a href="#" title="Report" class="author meta-info">  <i class="fa-solid fa-flag"></i></a></li>
+                                        <li class="meta bottom hide-on-mobile"> 
+                                           <a href="#" title="Save" class="author meta-info"> <i class="fa-solid fa-bookmark"></i></a></li>  
+                                     </ul>
+                                   </div>  
+                                  </div>  
+                                
        
+                                 <div class="meta bottom hide-on-mobile"> 
+                                  <a href="#" title="Comments" class="author meta-info">
+                                     <i class="fa-solid fa-comment"></i> {{lis.commentsCount}}</a></div> -->
+                                 <div class="meta bottom hide-on-mobile"> 
+                                  <a *ngIf="token===null" href="/login" title="Likes" class="author meta-info {{lis.likestatus}}">  
+                                     <i class="fa-solid fa-heart"></i> {{lis.agree}}</a>
+                                     <a *ngIf="token!==null" (click)="like(lis.slug,lis.likestatus)" title="Likes" class="author meta-info {{lis.likestatus}}">  
+                                        <i class="fa-solid fa-heart"></i> {{lis.agree}}</a>
+                                  </div>
+                              </div>
+                              <!-- end: .right -->
+                              <div class="clear"></div>
+                              <hr class="lc" aria-hidden="true">
+                           </div>
+                        </article>
+                     </div>
+                 </section>
+              </div>
+           </div>
+        </div>
       </div>
-    </div>
+
+     
+
+
    
-  </main>

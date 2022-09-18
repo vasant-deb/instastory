@@ -1,0 +1,39 @@
+div#js-licensing {
+    display: none !important;
+}
+
+main.profilex {
+    overflow: visible; /* Hide scrollbars */
+}
+body{
+    overflow: hidden; /* Hide scrollbars */
+}
+.btn-light {
+    background: #ededed;
+    color: #000;
+  }
+  
+  
+  .btn {
+    float: right;
+    appearance: none;
+      -webkit-appearance: none;
+    font-family: sans-serif;
+    cursor: pointer;
+    padding: 2px;
+    min-width: 100px;
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #ff8800;
+    margin: 15px auto;
+ 
+      -webkit-transition: background-color 100ms linear;
+      -ms-transition: background-color 100ms linear;
+       transition: background-color 100ms linear;
+  }
+  
+  .btn:focus, .btn.focus {
+    outline: 0;
+  }
+  
+  

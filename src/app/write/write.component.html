@@ -1,1 +1,18 @@
-<p>Coming Soon !</p>
+<link href="https://cdn.syncfusion.com/ej2/ej2-richtexteditor/styles/material.css" rel="stylesheet" />
+<link href="https://cdn.syncfusion.com/ej2/ej2-base/styles/material.css" rel="stylesheet" />
+<link href="https://cdn.syncfusion.com/ej2/ej2-dropdowns/styles/material.css" rel="stylesheet" />
+<link href="https://cdn.syncfusion.com/ej2/ej2-lists/styles/material.css" rel="stylesheet" />
+<link href="https://cdn.syncfusion.com/ej2/ej2-popups/styles/material.css" rel="stylesheet" />
+<link href="https://cdn.syncfusion.com/ej2/ej2-buttons/styles/material.css" rel="stylesheet" />
+<link href="https://cdn.syncfusion.com/ej2/ej2-splitbuttons/styles/material.css" rel="stylesheet" />
+<link href="https://cdn.syncfusion.com/ej2/ej2-inputs/styles/material.css" rel="stylesheet" />
+<link href="https://cdn.syncfusion.com/ej2/ej2-navigations/styles/material.css" rel="stylesheet" />
+<ejs-richtexteditor #exampleRTE [toolbarSettings]="customToolbar">
+    <ng-template #valueTemplate>
+      <h3>Your Heading</h3>
+      <img src="https://www.haleeducation.com/wp-content/uploads/2021/10/courses-in-creative-writing.jpg"/>
+      <p> Write whatever you feel like.....</p>
+     
+    </ng-template>
+  </ejs-richtexteditor>
+  <button ej-button id='button' class="e-control e-btn btn btn-light" (click)="getFormattedContent()">Post</button>
