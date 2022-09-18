@@ -29,7 +29,16 @@
                 "src/assets/css/custom.css",
                 "src/assets/css/mobile.css",
                 "src/assets/css/responsive.css",
-                "src/assets/css/profile.css"                
+                "src/assets/css/profile.css",
+                "src/assets/css/ej2-richtexteditor.css",
+                "src/assets/css/ej2-base.css",
+                "src/assets/css/ej2-dropdowns.css",
+                "src/assets/css/ej2-lists.css",
+                "src/assets/css/ej2-popups.css",
+                "src/assets/css/ej2-buttons.css",
+                "src/assets/css/ej2-splitbuttons.css",
+                "src/assets/css/ej2-inputs.css",
+                "src/assets/css/ej2-navigations.css"             
               ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js",

@@ -1,11 +1,5 @@
-div#js-licensing {
-    display: none !important;
-}
 
-main.profilex {
-    overflow: visible; /* Hide scrollbars */
-}
-body{
+.write{
     overflow: hidden; /* Hide scrollbars */
 }
 .btn-light {
@@ -13,7 +7,11 @@ body{
     color: #000;
   }
   
-  
+  .write {
+    display: inline-block;
+    width: 80%;
+    margin: 60px auto;
+}
   .btn {
     float: right;
     appearance: none;

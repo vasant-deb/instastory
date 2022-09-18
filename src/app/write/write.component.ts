@@ -25,7 +25,13 @@ export class WriteComponent implements OnInit {
   }
 
   public customToolbar: Object ={
-    items: [ 'Bold', 'Italic','Undo', 'Redo', 'CreateTable', 'Image', 'CreateLink','FontName', 'FontSize', 'FontColor',]
+    items: ['Bold', 'Italic', 'Underline', 'StrikeThrough',
+            'FontName', 'FontSize', 'FontColor', 'BackgroundColor',
+            'LowerCase', 'UpperCase','SuperScript', 'SubScript', '|',
+            'Formats', 'Alignments', 'NumberFormatList', 'BulletFormatList',
+            'Outdent', 'Indent', '|',
+            'CreateTable', 'CreateLink', 'Image', 'FileManager', '|', 'ClearFormat', 'Print',
+            'SourceCode', 'FullScreen', '|', 'Undo', 'Redo']
   };
   constructor(private http: HttpClient,private router: Router) { }
 
