@@ -31,6 +31,7 @@
 
     </div>
   </div>
+  
       <!--START-->
       <div class="row center">
         <div class="col-md-12">
@@ -97,6 +98,11 @@
                                       <a href="#" class="tag-link-{{i}}">{{tag}}</a>                
                                    </div>
                                 </div> -->
+                                <div class="tags">
+                                 <div class="tags" *ngFor="let tag of lis.tags?.split(',') ; let i = index">
+                                    <a href="#" class="tag-link-{{i}}">{{tag}}</a>                
+                                 </div>
+                              </div>
                                 <div class="mobile">
                                   <!-- start: .meta -->
                                      <span class="views-counter meta-info icon comments" title="{{lis.first_name}} {{lis.last_name}}">
