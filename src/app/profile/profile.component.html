@@ -1,9 +1,18 @@
 
-    <div class="row center profilex" *ngIf="viewuser">
+    <div class="border-image-clip-path">
+    <div class="row center" *ngIf="viewuser">
+    
       <div class="cardx containerx">
         <div class="bg"> 
 <div class="profile-pic">
-    <img src="{{viewuser.image}}">
+ 
+    <img class="avatar" src="{{viewuser.image}}">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    
+    
 </div>
             <p class="p"><b>{{viewuser.first_name}} {{viewuser.last_name}} </b></p>
             <p class="p">{{viewuser.bio}} </p>
@@ -19,9 +28,9 @@
        
     </div>
 </div>
-</div>
+
     </div>
-    
+  </div>
       <!--START-->
       <div class="row center">
         <div class="col-md-12">
@@ -229,7 +238,7 @@
            </div>
         </div>
       </div>
-
+    </div>
      
 
 
