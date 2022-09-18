@@ -94,3 +94,9 @@ p {
     filter: hue-rotate(360deg);
 }
   }
+.tags.profiletag {
+    display: inline-block;
+}
+.tagsnew{
+  margin:10px auto;
+}
