@@ -1,12 +1,51 @@
 
-<div class="write">
-<ejs-richtexteditor #exampleRTE [toolbarSettings]="customToolbar">
-    <ng-template #valueTemplate>
-      <h3>Your Heading</h3>
-      <img src="https://www.haleeducation.com/wp-content/uploads/2021/10/courses-in-creative-writing.jpg"/>
-      <p> Write whatever you feel like.....</p>
+ <div class="newwrite row">
+  <div class="col-md-12 col-sm-12">
+    
+            
      
-    </ng-template>
-  </ejs-richtexteditor>
-  <button ej-button id='button' class="e-control e-btn btn btn-light" (click)="getFormattedContent()">Post</button>
+      <div class="content">
+         
+         <section>
+          <form [formGroup]="formdata" class="contact-form" (ngSubmit)="submit()"> 
+          <label for="email">Title</label>
+          <input type="text" name="titlex" formControlName="titlex" required>
+          <div *ngIf="f.titlex.touched && f.titlex.invalid" class="alert alert-danger">
+            <div *ngIf="f.titlex.errors.required">Title is required.</div>
+            <div *ngIf="f.titlex.errors.minlength">Title should be 5 character.</div>
+        </div>
+          <label for="email">Tags (Tags must be comma seprated)</label>
+          <input type="text" name="tagx" formControlName="tagx" required>
+          <div *ngIf="f.tagx.touched && f.tagx.invalid" class="alert alert-danger">
+            <div *ngIf="f.tagx.errors.required">Tag is required.</div>
+            <div *ngIf="f.tagx.errors.minlength">Tag should be 3 character.</div>
+            <div *ngIf="f.tagx.errors.cannotContainSpace">Tag can not contain space.</div>
+        </div>
+          <label for="email">Description</label>
+          <textarea autosize name="descriptionx" formControlName="descriptionx" required></textarea>  
+          <div *ngIf="f.descriptionx.errors.required">Description is required.</div>
+          <div *ngIf="f.descriptionx.errors.minlength">Description should be 100 character.</div>
+          <img [src]="imageSrc" *ngIf="imageSrc" style="height: 300px; width:500px"> 
+          <div class="form-group">
+            <label for="file">File:</label>
+            <input
+                formControlName="file"
+                id="file"
+                type="file"
+                class="form-control"
+                (change)="onFileChange($event)">
+            <div *ngIf="f['file'].touched && f['file'].invalid" class="alert alert-danger">
+                <div *ngIf="f['file'].errors && f['file'].errors['required']">File is required.</div>
+            </div>
+        </div>
+           
+         
+          <button ej-button id='button' [disabled]="formdata.invalid" type="submit" class="square-button">Post</button>
+          </form>
+           </section>
 </div>
+
+</div>
+</div>
+
+

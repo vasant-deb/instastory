@@ -23,11 +23,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatRadioModule } from '@angular/material/radio';
-import { RichTextEditorModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { BookmarkComponent } from './bookmark/bookmark.component';
 import { NotificationComponent } from './notification/notification.component';
 import { WriteComponent } from './write/write.component';
 import { YourstoryComponent } from './yourstory/yourstory.component';
+import { TagValidator } from './write/tag.validator';
+import {AutosizeModule} from 'ngx-autosize';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,7 @@ import { YourstoryComponent } from './yourstory/yourstory.component';
    YourstoryComponent
   ],
   imports: [
-    RichTextEditorModule,
+    AutosizeModule,
     MatRadioModule,
     BrowserModule,
     AppRoutingModule,

@@ -1,18 +1,5 @@
 
-.write{
-    overflow: hidden; /* Hide scrollbars */
-}
-.btn-light {
-    background: #ededed;
-    color: #000;
-  }
-  
-  .write {
-    display: inline-block;
-    width: 80%;
-    margin: 60px auto;
-}
-  .btn {
+    .btn {
     float: right;
     appearance: none;
       -webkit-appearance: none;
@@ -33,5 +20,43 @@
   .btn:focus, .btn.focus {
     outline: 0;
   }
-  
-  
+ 
+  .square-button{
+    justify-content: center;
+    margin: 10px auto;
+   text-align: center;
+   float: right;
+   margin-bottom: 10vh;
+  }
+  @media only screen and (max-width: 750px){
+.container .center {
+    width: 130%;
+    left: 0;
+    top: 0;
+}
+}
+.newwrite{
+  overflow: visible;
+  position:absolute;
+  width: 50%;
+  margin:0px 2px;
+  display: block;
+  padding:2px;
+ }
+ .newwrite label{
+  font-size: 18px;
+  margin:10px 0px;
+  font-weight: 500;
+ }
+ textarea,input{
+  font-size: 16px;
+ }
+  @media only screen and (max-width: 750px) {
+     .newwrite{
+     position:absolute;
+     width: 90%;
+     margin:0px 2px;
+     display: block;
+     padding:2px;
+    }
+    }

@@ -2,52 +2,79 @@ import { Component, OnInit, ViewChild  } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { RichTextEditorComponent, ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService } from '@syncfusion/ej2-angular-richtexteditor';
+
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { TagValidator } from './tag.validator';
 
 @Component({
   selector: 'app-write',
   templateUrl: './write.component.html',
   styleUrls: ['./write.component.css'],
-  providers: [RichTextEditorComponent,ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService]
 
 })
 export class WriteComponent implements OnInit {
-  title = 'angular-richtexteditor';
   public mode: string = 'Markdown';
-  @ViewChild('exampleRTE')
-  public componentObject! : RichTextEditorComponent;
-  private buttonElement! : HTMLElement | null;
-  private htmlContent! : string;
-
-  getFormattedContent() {
-    this.buttonElement = document.getElementById('button');
-    this.htmlContent = this.componentObject.getHtml();
-  }
-
-  public customToolbar: Object ={
-    items: ['Bold', 'Italic', 'Underline', 'StrikeThrough',
-            'FontName', 'FontSize', 'FontColor', 'BackgroundColor',
-            'LowerCase', 'UpperCase','SuperScript', 'SubScript', '|',
-            'Formats', 'Alignments', 'NumberFormatList', 'BulletFormatList',
-            'Outdent', 'Indent', '|',
-            'CreateTable', 'CreateLink', 'Image', 'FileManager', '|', 'ClearFormat', 'Print',
-            'SourceCode', 'FullScreen', '|', 'Undo', 'Redo']
-  };
+  itemsAsObjects = [{id: 0, name: 'Angular', readonly: true}, {id: 1, name: 'React'}];
   constructor(private http: HttpClient,private router: Router) { }
-
   data:any;
   viewuser:any;
   viewbookmarks:any;
   viewstory:any;
-  
-  
+  imageSrc: string = '';
+  titlex:any; 
+  formdata:any;
   token=localStorage.getItem('token');
   email=localStorage.getItem('email');
   ngOnInit(): void {
     this.http.post<any>(environment.apiUrl + '/getprofile', {token: this.token, email: this.email}).subscribe(data => {
       this.viewuser=data.info;
   })
-
+  
+   this.formdata = new FormGroup({ 
+         titlex: new FormControl("Whats your title ?",[Validators.required, Validators.minLength(5)]),
+         tagx: new FormControl("Science,Technology",[Validators.required, Validators.minLength(3), TagValidator.cannotContainSpace]),
+         descriptionx:new FormControl("Hi there! this is the description for what i know and what i believe",[Validators.required, Validators.minLength(100)]),
+         file: new FormControl('', [Validators.required]),
+         fileSource: new FormControl('', [Validators.required])
+      }); 
   }
-
+  get f(){
+    return this.formdata.controls;
+  }
+   
+  /**
+   * Write code on Method
+   *
+   * @return response()
+   */
+  onFileChange(event:any) {
+    const reader = new FileReader();
+     
+    if(event.target.files && event.target.files.length) {
+      const [file] = event.target.files;
+      reader.readAsDataURL(file);
+     
+      reader.onload = () => {
+    
+        this.imageSrc = reader.result as string;
+      
+        this.formdata.patchValue({
+          fileSource: reader.result
+        });
+    
+      };
+    
+    }
+  }
+   
+  
+  submit(){
+    console.log(this.formdata.value);
+    this.http.post(environment.apiUrl + '/write', this.formdata.value)
+      .subscribe(res => {
+        console.log(res);
+        alert('Uploaded Successfully.');
+      })
+  }
+  
 }

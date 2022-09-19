@@ -1,4 +1,8 @@
 @media only screen and (max-width: 916px) {
+    .mobileview{
+        display: none;
+    }
+    
     .left-side-navbar {
         width: 10%;
     }
@@ -59,6 +63,17 @@
     }
 }
 @media only screen and (max-width: 750px) {
+    .mobileview{
+        display: block !important;
+    }
+    .contact-wrap{
+        padding: 10px !important;
+        margin: 10px !important;
+        width: 90% !important;
+      }
+    .desktopview{
+        display:none;
+    }
     .containerx button.mobile{
         display: block !important; 
     }
