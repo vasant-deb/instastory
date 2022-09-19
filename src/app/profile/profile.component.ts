@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild  } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 
 export class ProfileComponent{
  
-  constructor(private http: HttpClient,private router: Router) { }
+  constructor(private http: HttpClient,private router: Router,private route: ActivatedRoute) { }
 
   data:any;
   viewuser:any;
@@ -20,10 +20,14 @@ export class ProfileComponent{
   story : any;
   token=localStorage.getItem('token');
   email=localStorage.getItem('email');
-
+  usertoken='';
   ngOnInit(): void {
-    this.http.post<any>(environment.apiUrl + '/getprofile', {token: this.token, email: this.email}).subscribe(data => {
+    if(this.token!==this.route.snapshot.params['slug']){
+    this.usertoken=this.route.snapshot.params['slug'];
+    }
+    this.http.post<any>(environment.apiUrl + '/getprofile', {token: this.token, email: this.email,usertoken:this.usertoken}).subscribe(data => {
       this.viewuser=data.info;
+      console.log(this.viewuser);
   })
 
   this.http.post<any>(environment.apiUrl + '/getbookmarks', {email: this.email}).subscribe(data => {
