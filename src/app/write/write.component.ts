@@ -29,13 +29,14 @@ export class WriteComponent implements OnInit {
     this.http.post<any>(environment.apiUrl + '/getprofile', {token: this.token, email: this.email}).subscribe(data => {
       this.viewuser=data.info;
   })
-  
+  let tokenx='';
    this.formdata = new FormGroup({ 
          titlex: new FormControl("Whats your title ?",[Validators.required, Validators.minLength(5)]),
          tagx: new FormControl("Science,Technology",[Validators.required, Validators.minLength(3), TagValidator.cannotContainSpace]),
-         descriptionx:new FormControl("Hi there! this is the description for what i know and what i believe",[Validators.required, Validators.minLength(100)]),
+         descriptionx:new FormControl("Hi there! this is the description for what i know and what i believe",[Validators.required, Validators.minLength(50)]),
          file: new FormControl('', [Validators.required]),
-         fileSource: new FormControl('', [Validators.required])
+         fileSource: new FormControl('', [Validators.required]),
+         tokenx: new FormControl(this.token),
       }); 
   }
   get f(){

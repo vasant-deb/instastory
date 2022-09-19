@@ -96,7 +96,8 @@ p {
 }
   }
 .tags.profiletag {
-    display: inline-block;
+  margin: 5px auto;
+  display: inline-block;
 }
 .tagsnew{
   margin:10px auto;
