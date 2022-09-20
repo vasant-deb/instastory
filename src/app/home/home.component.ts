@@ -37,12 +37,18 @@ export class HomeComponent implements OnInit {
    
     this.http.post<any>(environment.apiUrl + '/homelogedin', {token: this.token}).subscribe(data => {
       this.story=data.stats;
-      
   });
-
-    
         });   
           
+        }
+        save(storyId:any,bookmarkstatus:any){
+        
+          this.http.post<any>(environment.apiUrl + '/savebookmark', {token: this.token,story_id:storyId,bstatus:bookmarkstatus}).subscribe(data => {
+            this.http.post<any>(environment.apiUrl + '/homelogedin', {token: this.token}).subscribe(data => {
+              this.story=data.stats;
+          });
+            });  
+                 
         }
   
 }

@@ -76,7 +76,12 @@
                           <div class="mobile">
                             <!-- start: .meta -->
                                <span class="views-counter meta-info icon comments" title="{{lis.first_name}} {{lis.last_name}}">
-                                  <b>{{lis.first_name}} {{lis.last_name}}</b> - {{lis.created_at}}
+                                 <b *ngIf="lis.token">
+                                    <a href="profile/{{lis.token}}">{{lis.first_name}} {{lis.last_name}}</a>
+                                    </b>
+                                    <b *ngIf="!lis.token">
+                                    <span>{{lis.first_name}} {{lis.last_name}}</span>
+                                 </b>  - {{lis.created_at}}
                                </span>
                               
                                <div class="clear"></div>
@@ -101,7 +106,20 @@
                           <div class="meta bottom hide-on-mobile"> 
                            <a href="#" title="Comments" class="author meta-info">
                               <i class="fa-solid fa-comment"></i> {{lis.commentsCount}}</a></div> -->
+
+                                                        
+     
+
+
                           <div class="meta bottom hide-on-mobile"> 
+                           <a href="#" title="Save" class="author meta-info">
+                             
+                              <a *ngIf="token===null" href="/login" title="Save" class="author meta-info {{lis.bstatus}}">  
+                                 <i class="fa-solid fa-bookmark"></i></a></a>
+                                 <a *ngIf="token!==null" (click)="save(lis.id,lis.bstatus)" title="Save" class="author meta-info {{lis.bstatus}}">  
+                                    <i class="fa-solid fa-bookmark"></i></a>
+
+
                            <a *ngIf="token===null" href="/login" title="Likes" class="author meta-info {{lis.likestatus}}">  
                               <i class="fa-solid fa-heart"></i> {{lis.agree}}</a>
                               <a *ngIf="token!==null" (click)="like(lis.slug,lis.likestatus)" title="Likes" class="author meta-info {{lis.likestatus}}">  

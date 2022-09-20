@@ -59,4 +59,16 @@ this.http.post<any>(environment.apiUrl + '/yourstory', {email: this.email}).subs
         });   
           
         }
+        logout(){
+          localStorage.clear();
+          this.router.navigate(['/home']);
+        }
+        save(storyId:any){
+        
+            this.http.post<any>(environment.apiUrl + '/savebookmark', {token: this.token,story_id:storyId,bstatus:'active'}).subscribe(data => {
+            this.http.post<any>(environment.apiUrl + '/getbookmarks', {email: this.email}).subscribe(data => {
+            this.story=data.info;});
+            });  
+                 
+        }
 }

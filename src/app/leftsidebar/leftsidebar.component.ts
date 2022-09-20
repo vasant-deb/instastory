@@ -13,11 +13,13 @@ export class LeftsidebarComponent implements OnInit {
  
   usertoken='';
   profileactive='';
+  profileactivex='';
   token=localStorage.getItem('token');
  
   ngOnInit(): void {
     var splitUrl = window.location.pathname.split('/'); 
     this.profileactive=splitUrl[1];
+    this.profileactivex=splitUrl[1];
     if(this.profileactive=="profile"){
       this.profileactive='active';
     }else{

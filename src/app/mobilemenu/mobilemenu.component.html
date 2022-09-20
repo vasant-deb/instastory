@@ -28,11 +28,11 @@
       Login
     </a>
    
-    <a routerLink="profile/{{this.token}}" routerLinkActive="active" *ngIf="token!==null && this.profileactive==''">
+    <a routerLink="profile/{{this.token}}" routerLinkActive="active" *ngIf="token!==null">
       <i class="fa-solid fa-user"></i>
       Profile
     </a>
-    <a href="profile/{{this.token}}"  *ngIf="token!==null && this.profileactive!==''" class="active">
+    <a href="profile/{{this.token}}"  *ngIf="token!==null && this.profileactivex=='profile'">
       <i class="fa-solid fa-user"></i>
       Profile
     </a>

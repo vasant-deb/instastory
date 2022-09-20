@@ -102,3 +102,8 @@ p {
 .tagsnew{
   margin:10px auto;
 }
+button.btn-follow {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: 500 !important;
+}

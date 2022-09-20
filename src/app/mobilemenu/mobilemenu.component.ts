@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-mobilemenu',
   templateUrl: './mobilemenu.component.html',
   styleUrls: ['./mobilemenu.component.css']
 })
-export class MobilemenuComponent implements OnInit {
+export class MobilemenuComponent {
 
   constructor() { }
   usertoken='';
   profileactive='';
-
+  profileactivex='';
  
 
   token=localStorage.getItem('token');
@@ -19,6 +19,7 @@ export class MobilemenuComponent implements OnInit {
   ngOnInit(): void {
    
     var splitUrl = window.location.pathname.split('/'); 
+    this.profileactivex=splitUrl[1];
     this.profileactive=splitUrl[1];
     if(this.profileactive=="profile"){
       this.profileactive='active';
