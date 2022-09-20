@@ -15,11 +15,11 @@ export class HomeComponent implements OnInit {
   token=localStorage.getItem('token');
   constructor(private api:ApiService,private http: HttpClient) {}
   ngOnInit() {
- 
-   
+
           if(this.token=="" || this.token===undefined || this.token===null){
           this.api.getstory().subscribe((data:any)=>{
           this.story=data.stats;
+         
         });
         }
         else {

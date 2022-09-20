@@ -112,10 +112,10 @@
 
 
                           <div class="meta bottom hide-on-mobile"> 
-                           <a href="#" title="Save" class="author meta-info">
+                         
                              
                               <a *ngIf="token===null" href="/login" title="Save" class="author meta-info {{lis.bstatus}}">  
-                                 <i class="fa-solid fa-bookmark"></i></a></a>
+                                 <i class="fa-solid fa-bookmark"></i></a>
                                  <a *ngIf="token!==null" (click)="save(lis.id,lis.bstatus)" title="Save" class="author meta-info {{lis.bstatus}}">  
                                     <i class="fa-solid fa-bookmark"></i></a>
 
