@@ -21,13 +21,18 @@ export class ProfileComponent{
   token=localStorage.getItem('token');
   email=localStorage.getItem('email');
   usertoken='';
+  viewpostcount='';
+  followStatus='';
+  ownprofile='Edit Profile';
+  userProfile='Follow';
   ngOnInit(): void {
     if(this.token!==this.route.snapshot.params['slug']){
     this.usertoken=this.route.snapshot.params['slug'];
     }
     this.http.post<any>(environment.apiUrl + '/getprofile', {token: this.token, email: this.email,usertoken:this.usertoken}).subscribe(data => {
       this.viewuser=data.info;
-      console.log(this.viewuser);
+      this.viewpostcount=data.postcount;
+      this.followStatus=data.followStatus;
   })
 
   this.http.post<any>(environment.apiUrl + '/getbookmarks', {email: this.email}).subscribe(data => {

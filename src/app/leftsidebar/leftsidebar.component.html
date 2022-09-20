@@ -25,9 +25,12 @@
     <a routerLink="login" routerLinkActive="active" *ngIf="token===null" class="navicon" title="Login">
         <i class="fa-solid fa-user"></i>
     </a>
-    <a routerLink="profile/{{this.token}}" routerLinkActive="active" *ngIf="token!==null" class="navicon" title="Your Profile">
+    <a routerLink="profile/{{this.token}}" routerLinkActive="active" *ngIf="token!==null && this.profileactive==''" class="navicon" title="Your Profile">
       <i class="fa-solid fa-user"></i>
-  </a>
+    </a>
+    <a href="profile/{{this.token}}"  *ngIf="token!==null && this.profileactive!==''" class="navicon active" title="Your Profile">
+      <i class="fa-solid fa-user"></i>
+    </a>
     </div>
   </div>
 

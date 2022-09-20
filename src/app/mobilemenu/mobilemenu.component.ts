@@ -8,17 +8,22 @@ import { Component, OnInit } from '@angular/core';
 export class MobilemenuComponent implements OnInit {
 
   constructor() { }
+  usertoken='';
+  profileactive='';
+
+ 
+
   token=localStorage.getItem('token');
   navmenu='';
   navmenut='';
   ngOnInit(): void {
-    this.token=this.token;
-    if(this.token==null||this.token==undefined||this.token==""){
-      this.navmenu="login";
-      this.navmenut="Login";
+   
+    var splitUrl = window.location.pathname.split('/'); 
+    this.profileactive=splitUrl[1];
+    if(this.profileactive=="profile"){
+      this.profileactive='active';
     }else{
-      this.navmenu="profile";
-      this.navmenut="Profile";
+      this.profileactive='';
     }
   }
   viewmore(){

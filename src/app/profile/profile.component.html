@@ -17,12 +17,14 @@
             <p class="p">{{viewuser.bio}} </p>
             <p class="p">{{viewuser.country}}, {{viewuser.state}} </p>
             <div class="user-data">
-                <div class="post"><div class="num">250</div><div class="txt">post</div></div>
-                <div class="followers"><div class="num">2500</div><div class="txt">Followers</div></div>
-                <div class="following"><div class="num">1500</div><div class="txt">Likes</div></div>
+                <div class="post"><div class="num">{{this.viewpostcount}}</div><div class="txt">Posts</div></div>
+                <div class="followers"><div class="num"> {{viewuser.followersCount}}</div><div class="txt">Followers</div></div>
+                <div class="followers"><div class="num"> {{viewuser.followingCount}}</div><div class="txt">Following</div></div>
             </div>
             <div class="cardx-footer">
-        <button class="btn-follow">Follow</button><br><br>
+        <button *ngIf="followStatus" class="btn-follow">{{this.followStatus}}</button>
+        <button *ngIf="!followStatus" class="btn-follow">Edit Profile</button>
+        <br><br>
     </div>
      <!--start tegs-->
      <div class="tagsnew">

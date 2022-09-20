@@ -23,10 +23,17 @@
          <i class="fa-solid fa-pen-to-square"></i>
         Write
     </a>
-   
-    <a  routerLink="{{navmenu}}" routerLinkActive="active">
+    <a routerLink="login" routerLinkActive="active" *ngIf="this.token==null || this.token==''">
       <i class="fa-solid fa-user"></i>
-     {{navmenut}}
+      Login
     </a>
    
+    <a routerLink="profile/{{this.token}}" routerLinkActive="active" *ngIf="token!==null && this.profileactive==''">
+      <i class="fa-solid fa-user"></i>
+      Profile
+    </a>
+    <a href="profile/{{this.token}}"  *ngIf="token!==null && this.profileactive!==''" class="active">
+      <i class="fa-solid fa-user"></i>
+      Profile
+    </a>
   </div>

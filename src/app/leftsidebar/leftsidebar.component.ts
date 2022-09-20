@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router,ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-leftsidebar',
@@ -6,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./leftsidebar.component.css']
 })
 export class LeftsidebarComponent implements OnInit {
-
-  constructor() { }
+ 
+  constructor(private Location:Location,private route: ActivatedRoute,private router:Router) { }
+ 
+  usertoken='';
+  profileactive='';
   token=localStorage.getItem('token');
+ 
   ngOnInit(): void {
+    var splitUrl = window.location.pathname.split('/'); 
+    this.profileactive=splitUrl[1];
+    if(this.profileactive=="profile"){
+      this.profileactive='active';
+    }else{
+      this.profileactive='';
+    }
   }
 
 }
