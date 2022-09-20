@@ -27,13 +27,13 @@
       <i class="fa-solid fa-user"></i>
       Login
     </a>
-   
-    <a routerLink="profile/{{this.token}}" routerLinkActive="active" *ngIf="token!==null">
+    <a *ngIf="this.account.isLoggedIn()" routerLink="/profile/{{this.account.getToken()}}" routerLinkActive="active">
       <i class="fa-solid fa-user"></i>
       Profile
     </a>
-    <a href="profile/{{this.token}}"  *ngIf="token!==null && this.profileactivex=='profile'">
+    <a *ngIf="!this.account.isLoggedIn()" routerLink="login" routerLinkActive="active">
       <i class="fa-solid fa-user"></i>
-      Profile
+      Login
     </a>
+  
   </div>

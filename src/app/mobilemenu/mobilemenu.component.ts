@@ -1,4 +1,5 @@
 import { Component, OnInit,OnDestroy } from '@angular/core';
+import { AuthenticationService } from './../services/authentication.service';
 
 @Component({
   selector: 'app-mobilemenu',
@@ -7,25 +8,16 @@ import { Component, OnInit,OnDestroy } from '@angular/core';
 })
 export class MobilemenuComponent {
 
-  constructor() { }
-  usertoken='';
-  profileactive='';
-  profileactivex='';
+  constructor(public account: AuthenticationService) { }
+
+
  
 
   token=localStorage.getItem('token');
-  navmenu='';
-  navmenut='';
+ 
   ngOnInit(): void {
    
-    var splitUrl = window.location.pathname.split('/'); 
-    this.profileactivex=splitUrl[1];
-    this.profileactive=splitUrl[1];
-    if(this.profileactive=="profile"){
-      this.profileactive='active';
-    }else{
-      this.profileactive='';
-    }
+    
   }
   viewmore(){
     alert("hello");

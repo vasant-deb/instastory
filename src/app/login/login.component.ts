@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   
   public loginForm!: FormGroup;
  data:any;
-status=null;
+ status=null;
  public registerForm!: FormGroup;
   constructor(private http: HttpClient,private router: Router,private api:ApiService, private authenticationService: AuthenticationService) {}
    token=localStorage.getItem('token');
@@ -37,16 +37,7 @@ status=null;
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', Validators.required),
     });
-    this.http.post<any>(environment.apiUrl + '/verify', {token: this.token, email: this.email}).subscribe(data => {
-      this.status=data.status;
-      if(this.status=="true"){
-        console.log(this.status);
-      this.router.navigate(['/profile']);
-    }  else{
-      this.router.navigate(['/login']);
-
-    }
-  })
+ 
 
   }
 

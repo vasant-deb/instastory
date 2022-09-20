@@ -21,7 +21,7 @@ const routes: Routes = [
 },
   { path: 'login', component: LoginComponent },
   {path: 'profile/:slug', component: ProfileComponent, canActivate: [AuthGuard],},
-
+  {path: 'viewprofile/:slug', component: ProfileComponent, canActivate: [AuthGuard],},
   {path: 'bookmark', component: BookmarkComponent, canActivate: [AuthGuard],},
   {path: 'notification', component: NotificationComponent, canActivate: [AuthGuard],},
   {path: 'write', component: WriteComponent, canActivate: [AuthGuard],},

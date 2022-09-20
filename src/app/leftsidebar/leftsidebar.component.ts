@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
+import { AuthenticationService } from './../services/authentication.service';
 
 @Component({
   selector: 'app-leftsidebar',
@@ -8,23 +8,19 @@ import { Location } from '@angular/common';
   styleUrls: ['./leftsidebar.component.css']
 })
 export class LeftsidebarComponent implements OnInit {
- 
-  constructor(private Location:Location,private route: ActivatedRoute,private router:Router) { }
+  
+
+  constructor(public account: AuthenticationService,private route: ActivatedRoute,private router:Router) { }
  
   usertoken='';
-  profileactive='';
-  profileactivex='';
-  token=localStorage.getItem('token');
  
+  token=localStorage.getItem('token');
+
+  routelink='';
   ngOnInit(): void {
-    var splitUrl = window.location.pathname.split('/'); 
-    this.profileactive=splitUrl[1];
-    this.profileactivex=splitUrl[1];
-    if(this.profileactive=="profile"){
-      this.profileactive='active';
-    }else{
-      this.profileactive='';
-    }
+   
   }
+  
+ 
 
 }

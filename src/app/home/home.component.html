@@ -33,7 +33,7 @@
                                                <use xlink:href="#views-outline-icon"></use>
                                             </svg>
                                             <b *ngIf="lis.token">
-                                             <a href="profile/{{lis.token}}">{{lis.first_name}} {{lis.last_name}}</a>
+                                             <a href="viewprofile/{{lis.token}}">{{lis.first_name}} {{lis.last_name}}</a>
                                              </b>
                                              <b *ngIf="!lis.token">
                                              <span>{{lis.first_name}} {{lis.last_name}}</span>
@@ -77,7 +77,7 @@
                             <!-- start: .meta -->
                                <span class="views-counter meta-info icon comments" title="{{lis.first_name}} {{lis.last_name}}">
                                  <b *ngIf="lis.token">
-                                    <a href="profile/{{lis.token}}">{{lis.first_name}} {{lis.last_name}}</a>
+                                    <a href="viewprofile/{{lis.token}}">{{lis.first_name}} {{lis.last_name}}</a>
                                     </b>
                                     <b *ngIf="!lis.token">
                                     <span>{{lis.first_name}} {{lis.last_name}}</span>

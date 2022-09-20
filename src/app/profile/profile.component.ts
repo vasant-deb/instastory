@@ -9,7 +9,7 @@ import { Router,ActivatedRoute } from '@angular/router';
   styleUrls: ['./profile.component.css'],
 })
 
-export class ProfileComponent{
+export class ProfileComponent implements OnInit{
  
   constructor(private http: HttpClient,private router: Router,private route: ActivatedRoute) { }
 
@@ -61,7 +61,7 @@ this.http.post<any>(environment.apiUrl + '/yourstory', {email: this.email}).subs
         }
         logout(){
           localStorage.clear();
-          this.router.navigate(['/home']);
+          this.router.navigate(['/login']);
         }
         save(storyId:any){
         

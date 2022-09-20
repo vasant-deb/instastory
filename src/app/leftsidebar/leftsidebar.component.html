@@ -12,7 +12,7 @@
       <a routerLink="notification" routerLinkActive="active" class="navicon" title="Notification">
         <i class="fa-solid fa-bell"></i>
       </a>
-      <a routerLink=" Search"  routerLinkActive="active" class="navicon" title="Search">
+      <a routerLink="Search"  routerLinkActive="active" class="navicon" title="Search">
         <i class="fa-solid fa-magnifying-glass"></i>
       </a>
     
@@ -21,14 +21,11 @@
    </a>
     
        <hr>
-     
-    <a routerLink="login" routerLinkActive="active" *ngIf="token===null" class="navicon" title="Login">
-        <i class="fa-solid fa-user"></i>
-    </a>
-    <a routerLink="profile/{{this.token}}" routerLinkActive="active" *ngIf="token!==null && this.profileactive==''" class="navicon" title="Your Profile">
+    
+    <a *ngIf="this.account.isLoggedIn()" routerLink="/profile/{{this.account.getToken()}}" routerLinkActive="active" class="navicon" title="Your Profile">
       <i class="fa-solid fa-user"></i>
     </a>
-    <a href="profile/{{this.token}}"  *ngIf="token!==null && this.profileactive!=='' && this.profileactivex=='profile'" class="navicon" title="Your Profile">
+    <a *ngIf="!this.account.isLoggedIn()" routerLink="login" routerLinkActive="active" class="navicon" title="Login">
       <i class="fa-solid fa-user"></i>
     </a>
     </div>
