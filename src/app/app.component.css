@@ -5,6 +5,7 @@ footer {
     background-color: rgba(255, 255, 255, 1);
     border: 1px solid rgba(230, 230, 230, 1);
   }
+  
   @media (min-width: 768px) {
     footer {
       position: fixed;
@@ -26,4 +27,15 @@ footer {
 }
 footer .right a {
     padding: 0px 10px;
+}
+.toast:not(.show) {
+  display: block !important;
+}
+.toast.active {
+  animation: cssAnimation 0s 5s forwards;
+  visibility: visible;
+}
+
+@keyframes cssAnimation {
+  to   { visibility: hidden; }
 }
