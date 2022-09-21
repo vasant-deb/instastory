@@ -23,10 +23,7 @@
          <i class="fa-solid fa-pen-to-square"></i>
         Write
     </a>
-    <a routerLink="login" routerLinkActive="active" *ngIf="this.token==null || this.token==''">
-      <i class="fa-solid fa-user"></i>
-      Login
-    </a>
+   
     <a *ngIf="this.account.isLoggedIn()" routerLink="/profile/{{this.account.getToken()}}" routerLinkActive="active">
       <i class="fa-solid fa-user"></i>
       Profile
