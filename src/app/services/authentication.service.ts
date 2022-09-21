@@ -20,13 +20,13 @@ export class AuthenticationService {
     this.authenticationClient.login(email, password).subscribe((token) => {
    
      if(token=="" || token==null){
-      this.classx='active';
+      this.classx='toast active';
      this.tokenx=`<div class="toast-content"><i class="fas fa-solid fa-times check"></i><div class="message"><span class="text text-2">Wrong Credentials !</span>
       </div></div><div class="progress active"></div>`;
      }else{
       localStorage.setItem(this.tokenKey, token);
       localStorage.setItem(this.emailKey, email);
-      this.classx='active';
+      this.classx='toast active';
       this.tokenx=`<div class="toast-content"><i class="fas fa-solid fa-check check"></i><div class="message"><span class="text text-2">Login Success</span>
        </div></div><div class="progress active"></div>`;
       this.router.navigate(["/profile/"+token]);

@@ -1,5 +1,4 @@
 <div class="container"> 
-  <div class="toast {{this.authen.classx}}" [innerHTML]="this.authen.tokenx"></div>
   <ng-http-loader></ng-http-loader>
   <!-- Left Sidebar -->
   <app-mobilemenu></app-mobilemenu>
@@ -13,7 +12,7 @@
 
 </div>
 
- 
+<div class="{{this.authen.classx}}" [innerHTML]="this.authen.tokenx"></div>
 
   <footer>
    <p class="left">Copyright : 2022 | All Rights Reserved </p>
