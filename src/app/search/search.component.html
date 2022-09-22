@@ -13,8 +13,8 @@
            <li title="Trending"><label for="tab1" class="mystyle" role="button">Trending</label></li>
            <li title="Latest"><label class="mystyle" for="tab2" role="button">Latest</label></li>
            <li title="Recommended"> 
-            <a *ngIf="!this.account.isLoggedIn()" routerLink="login">
-            <i class="fa-solid fa-user"></i>
+            <a *ngIf="!this.account.isLoggedIn()" routerLink="/login">
+                Recommended
           </a>
           <label *ngIf="this.account.isLoggedIn()" for="tab3" class="mystyle" role="button">Recommended</label>
         </li>
