@@ -107,3 +107,6 @@ button.btn-follow {
   margin-right: 10px;
   font-weight: 500 !important;
 }
+a.btn-follow {
+  font-weight: 500 !important;
+}

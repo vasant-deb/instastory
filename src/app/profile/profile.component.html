@@ -23,7 +23,7 @@
             </div>
             <div class="cardx-footer">
         <button *ngIf="followStatus" class="btn-follow">{{this.followStatus}}</button>
-        <button *ngIf="!followStatus" class="btn-follow">Edit Profile</button>
+        <a href="editprofile" *ngIf="!followStatus" class="btn-follow">Edit Profile</a>
         <button *ngIf="!followStatus" (click)="logout()" class="btn-follow">Logout</button>
         <br><br>
     </div>

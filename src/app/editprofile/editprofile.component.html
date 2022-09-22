@@ -1,0 +1,109 @@
+<div *ngIf="viewuser" class="container-xl px-4 mt-4">
+    <form [formGroup]="formdata" (ngSubmit)="submit()">
+    <!-- Account page navigation-->
+    <div class="row">
+        
+        <div class="col-xl-4">
+            <!-- Profile picture card-->
+            <div class="card mb-4 mb-xl-0">
+                <div class="card-header">Profile Picture</div>
+                
+                <div [formGroup]="formdata" class="card-body text-center">
+                    <img class="img-account-profile rounded-circle mb-2" *ngIf="!imageSrc" src="{{viewuser.image}}">
+                    <!-- Profile picture image-->
+                    <img [src]="imageSrc" *ngIf="imageSrc" style="height: 300px; width:500px"> 
+                    <div *ngIf="f['file'].touched && f['file'].invalid" class="alert alert-danger">
+                        <div *ngIf="f['file'].errors && f['file'].errors['required']">File is required.</div>
+                    </div>
+                    <!-- Profile picture help block-->
+                    <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+                    <!-- Profile picture upload button-->
+                    <input
+                    formControlName="file"
+                    id="file"
+                    type="file"
+                    class="form-control"
+                    (change)="onFileChange($event)">
+                
+                  
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-8">
+            <!-- Account details card-->
+            <div class="card mb-4">
+                <div class="card-header">Profile Details</div>
+                <div class="card-body">
+                    <form>
+                     
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (first name)-->
+                            <div [formGroup]="formdata" class="col-md-6">
+                                <label class="small mb-1" for="inputFirstName">First name</label>
+                                <input class="form-control" formControlName="firstname"  id="firstname" type="text" placeholder="Enter your first name">
+                                <div *ngIf="f.firstname.touched && f.firstname.invalid" class="alert alert-danger">
+                                    <div *ngIf="f.firstname.errors?.required">Firstname is required.</div>
+                                    <div *ngIf="f.firstname.errors?.minlength">Firstname should be 3 character.</div>
+                                </div>
+                            </div>
+                            <!-- Form Group (last name)-->
+                            <div [formGroup]="formdata" class="col-md-6">
+                                <label class="small mb-1" for="inputLastName">Last name</label>
+                                <input class="form-control" formControlName="lastname"  id="inputLastName" type="text">
+                    
+                            </div>
+                        </div>
+                        <!-- Form Row        -->
+                        <div [formGroup]="formdata" class="row gx-3 mb-3">
+                            <!-- Form Group (country name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputOrgName">Country</label>
+                                <input class="form-control" formControlName="country" id="inputOrgName" type="text" placeholder="Enter your country name">
+                                <div *ngIf="f.country.touched && f.country.invalid" class="alert alert-danger">
+                                    <div *ngIf="f.country.errors?.required">Country is required.</div>
+                                    <div *ngIf="f.country.errors?.minlength">Country should be 4 character.</div>
+                                </div>
+                            </div>
+                            <!-- Form Group (location)-->
+                            <div [formGroup]="formdata" class="col-md-6">
+                                <label class="small mb-1" for="inputLocation">State</label>
+                                <input class="form-control"  formControlName="state" id="inputLocation" type="text" placeholder="Enter your state or province">
+                                <div *ngIf="f.state.touched && f.state.invalid" class="alert alert-danger">
+                                    <div *ngIf="f.state.errors?.required">State is required.</div>
+                                    <div *ngIf="f.state.errors?.minlength">State should be 4 character.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Form Group (email address)-->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (country name)-->
+                            <div [formGroup]="formdata" class="col-md-6">
+                                <label class="small mb-1" for="inputOrgName">Email Address</label>
+                                <input class="form-control" id="inputOrgName" disabled type="email" placeholder="Enter your country name" value="{{viewuser.email}}">
+                            </div>
+                            <!-- Form Group (location)-->
+                            <div [formGroup]="formdata" class="col-md-6">
+                                <label class="small mb-1" for="inputLocation">Gender</label>
+                                <input class="form-control" id="inputLocation" disabled type="text" placeholder="Enter your state or province" value="{{viewuser.gender}}">
+                            </div>
+                        </div>
+                        <!-- Form Row-->
+                        <div [formGroup]="formdata" class="mb-3">
+                            <label class="small mb-1" for="inputEmailAddress">Bio</label>
+                            <textarea class="form-control" formControlName="bio" id="inputEmailAddress"></textarea>
+                            <div *ngIf="f.bio.touched && f.bio.invalid" class="alert alert-danger">
+                                <div *ngIf="f.bio.errors?.required">Bio is required.</div>
+                                <div *ngIf="f.bio.errors?.minlength">Bio should be 10 character.</div>
+                            </div>
+                        
+                        </div>
+                        <!-- Save changes button-->
+                        <button class="btn btn-primary" (click)="submit()" [disabled]="formdata.invalid" type="submit">Save changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+</div>

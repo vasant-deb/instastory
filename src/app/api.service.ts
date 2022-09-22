@@ -17,7 +17,9 @@ export class ApiService {
   getrecentstory() {
     return this.http.get(this.rootURL + '/rightsidebar');
   }
- 
+  gettrendingstory(){
+    return this.http.get(this.rootURL + '/trending');
+  }
  
   
  

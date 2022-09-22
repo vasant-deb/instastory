@@ -8,7 +8,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { NotificationComponent } from './notification/notification.component';
 import { WriteComponent } from './write/write.component';
 import { YourstoryComponent } from './yourstory/yourstory.component';
+import { SearchComponent } from './search/search.component';
 import { AuthGuard } from './helpers/auth.guard';
+import { EditprofileComponent } from './editprofile/editprofile.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -20,12 +22,14 @@ const routes: Routes = [
           }
 },
   { path: 'login', component: LoginComponent },
+  { path: 'search', component: SearchComponent },
   {path: 'profile/:slug', component: ProfileComponent, canActivate: [AuthGuard],},
   {path: 'viewprofile/:slug', component: ProfileComponent, canActivate: [AuthGuard],},
   {path: 'bookmark', component: BookmarkComponent, canActivate: [AuthGuard],},
   {path: 'notification', component: NotificationComponent, canActivate: [AuthGuard],},
   {path: 'write', component: WriteComponent, canActivate: [AuthGuard],},
   {path: 'yourstory', component: YourstoryComponent, canActivate: [AuthGuard],},
+  {path: 'editprofile', component: EditprofileComponent, canActivate: [AuthGuard],},
     // otherwise redirect to home
     { path: '**', redirectTo: 'home' },
     

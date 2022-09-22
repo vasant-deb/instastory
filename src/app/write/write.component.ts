@@ -38,42 +38,31 @@ export class WriteComponent implements OnInit {
          fileSource: new FormControl('', [Validators.required]),
          tokenx: new FormControl(this.token),
       }); 
+      
   }
+ 
   get f(){
     return this.formdata.controls;
   }
-   
-  /**
-   * Write code on Method
-   *
-   * @return response()
-   */
   onFileChange(event:any) {
     const reader = new FileReader();
-     
-    if(event.target.files && event.target.files.length) {
+         if(event.target.files && event.target.files.length) {
       const [file] = event.target.files;
       reader.readAsDataURL(file);
-     
-      reader.onload = () => {
-    
-        this.imageSrc = reader.result as string;
-      
-        this.formdata.patchValue({
+           reader.onload = () => {
+            this.imageSrc = reader.result as string;
+              this.formdata.patchValue({
           fileSource: reader.result
         });
-    
-      };
-    
-    }
+          };
+        }
   }
-   
-  
+     
   submit(){
-    console.log(this.formdata.value);
+  
     this.http.post(environment.apiUrl + '/write', this.formdata.value)
       .subscribe(res => {
-        console.log(res);
+     
         alert('Uploaded Successfully.');
       })
   }

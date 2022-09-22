@@ -29,6 +29,10 @@ import { WriteComponent } from './write/write.component';
 import { YourstoryComponent } from './yourstory/yourstory.component';
 import { TagValidator } from './write/tag.validator';
 import {AutosizeModule} from 'ngx-autosize';
+import { EditprofileComponent } from './editprofile/editprofile.component';
+import { SearchComponent } from './search/search.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 @NgModule({
   declarations: [
@@ -45,9 +49,12 @@ import {AutosizeModule} from 'ngx-autosize';
    BookmarkComponent,
    NotificationComponent,
    WriteComponent,
-   YourstoryComponent
+   YourstoryComponent,
+   EditprofileComponent,
+   SearchComponent
   ],
   imports: [
+    Ng2SearchPipeModule,
     AutosizeModule,
     MatRadioModule,
     BrowserModule,
