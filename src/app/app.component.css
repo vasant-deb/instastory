@@ -78,7 +78,7 @@ footer .right a {
 .logoc .btnx .notification-label {
   position: absolute;
   top: 2px;
-  right: 40px;
+  right: 5px;
 }
 
 .logoc .notification-label {
@@ -184,7 +184,7 @@ footer .right a {
 .logoc a.btnx i {
   float: right;
   position: relative;
-  right: 15%;
+  right: 5%;
   font-size: 25px;
   top: 25%;
 }
