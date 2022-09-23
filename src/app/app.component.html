@@ -1,5 +1,15 @@
+<div class="logoc">
+  <div class='mobilelogo'><img src="https://beta.autoreport.space/storyapi/public/uploads/readandwrite.png"/></div>
+  
+  <a  routerLink="notification" class="btnx" routerLinkActive="active" >
+    <i class="fa-solid fa-bell"></i>
+    <span class="notification-label notification-label-blue">3</span>
+</a>
+
+</div>
+
 <div class="container"> 
-  <ng-http-loader></ng-http-loader>
+  <ng-http-loader [filteredUrlPatterns]="['getnotification','updatenotification']"></ng-http-loader>
   <!-- Left Sidebar -->
   <app-mobilemenu></app-mobilemenu>
   <app-leftsidebar></app-leftsidebar>

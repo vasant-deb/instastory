@@ -1,3 +1,6 @@
+.logoc{
+    display: none;
+    }
 @media only screen and (max-width: 916px) {
     .mobileview{
         display: none;
@@ -194,8 +197,23 @@
     div#m-col {
         padding-bottom: 10vh !important;
     }
+    .container .center {
+        margin-top: 12% !important;
+    }
+    .logoc{
+        display: flex;
+        box-shadow: rgb(230 230 230) 0px -1px 0px inset;
+        position: fixed;
+        width: 100%;
+        height: 8%;
+        z-index: 9999;
+        background-color: #fff;
+      }
 }
 @media only screen and (max-width: 502px) {
+    .logoc{
+        height: 6%;
+      }
 
 	div.articles.classic article .epcl-dropcap {
         width: 60PX;
@@ -222,13 +240,34 @@
 }
 
 @media only screen and (max-width: 412px) {
+    .logoc{
+        height: 8%;
+      }
+
+}
+@media only screen and (width: 412px) {
+    .logoc{
+        height: 6%;
+      }
+
+}
+@media only screen and (max-width: 400px) {
+    .logoc{
+        height: 6%;
+      }
 
 }
 
-@media only screen and (max-width: 360px) {
-	
+@media only screen and (max-width: 380px) {
+    .logoc{
+        height: 8%;
+      }
 }
-
+@media only screen and (max-width: 370px) {
+    .logoc{
+        height: 7%;
+      }
+}
 @media only screen and (max-width: 321px) {
 	
 }

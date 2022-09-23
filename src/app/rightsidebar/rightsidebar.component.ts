@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 import {ApiService} from '../api.service';
+import { AuthenticationService } from './../services/authentication.service';
 @Component({
   selector: 'app-rightsidebar',
   templateUrl: './rightsidebar.component.html',
@@ -8,9 +10,9 @@ import {ApiService} from '../api.service';
 export class RightsidebarComponent implements OnInit {
 
   story=null;
-  
+  authors:any;
   tags=null;
-  constructor(private api:ApiService) {}
+  constructor(public authorx:AuthenticationService,private api:ApiService) {}
   
   
   ngOnInit() {
@@ -18,6 +20,10 @@ export class RightsidebarComponent implements OnInit {
       this.story=data.recentpost;
       this.tags = data.tags.split(',');
   });
-
+  this.api.getauthor().subscribe((data:any)=>{
+   
+    this.authors=data.stats;
+    console.log(data.stats);
+});
 }
 }

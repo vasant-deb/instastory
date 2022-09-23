@@ -1,1 +1,30 @@
-<p>Coming Soon !</p>
+
+
+<section class="section-50">
+    <div class="container-fluid">
+        <h3 class="m-b-50 heading-line">Notifications </h3>
+
+        <div *ngIf="viewnoti" class="notification-ui_dd-content">
+            <div *ngFor="let lis of viewnoti" class="notification-list notification-list--unread">
+                <div class="notification-list_content">
+                    <div class="notification-list_img">
+                        <a href="viewprofile/{{lis.token}}">  <img src="{{lis.userImage}}" alt="user"></a>
+                    </div>
+                    <div class="notification-list_detail">
+                       <p> <a href="viewprofile/{{lis.token}}"><b>{{lis.first_name}} {{lis.last_name}} </b> </a>{{lis.message}}</p>
+                        <a href="story/{{lis.slug}}"><p class="text-muted">{{lis.title}}</p></a>
+                        <p class="text-muted"><small>{{lis.created_at}}</small></p>
+                    </div>
+                </div>
+                <div class="notification-list_feature-img">
+                    <a href="story/{{lis.slug}}"> <img src="{{lis.postImage}}" alt="Feature image"></a>
+                </div>
+            </div>
+            
+            
+        </div>
+
+       
+
+    </div>
+</section>

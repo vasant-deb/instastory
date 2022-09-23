@@ -7,17 +7,38 @@
 
 
         <section id="epcl_posts_thumbs-8" class="widget widget_epcl_posts_thumbs">
-            <h4 class="widget-title title medium bordered"><span class="bg">Recent Stories</span><span class="border"></span></h4>
+            <h4 class="widget-title title medium bordered"><span class="bg">Popular Authors</span><span class="border"></span></h4>
            
-            <article *ngFor="let lis of story" class="item primary-cat-4 post-76 post type-post status-publish format-standard has-post-thumbnail hentry category-music category-technology category-travel tag-country tag-image">
-            <a href="story/{{lis.slug}}" class="thumb epcl-dropcap  main-effect effect-small epcl-loader"> 
-                <span class="fullimage cover" role="img"style="background-image: url({{lis.image}});"></span>
+            <article *ngFor="let lis of authors" class="item primary-cat-4 post-76 post type-post status-publish format-standard has-post-thumbnail hentry category-music category-technology category-travel tag-country tag-image">
+           
+            <a *ngIf="lis.first_name!=='Anonymous' && lis.token==this.authorx.getToken()" href="profile/{{lis.token}}" class="thumb epcl-dropcap  main-effect effect-small epcl-loader"> 
+                <span class="fullimage cover" role="img" style="background-image: url({{lis.image}});"></span>
                 <span class="fullimage cover" role="img" style="background-image: url({{lis.image}});"></span> 
             </a>
+            <a *ngIf="lis.first_name!=='Anonymous' && lis.token!==this.authorx.getToken()" href="viewprofile/{{lis.token}}" class="thumb epcl-dropcap  main-effect effect-small epcl-loader"> 
+                <span class="fullimage cover" role="img" style="background-image: url({{lis.image}});"></span>
+                <span class="fullimage cover" role="img" style="background-image: url({{lis.image}});"></span> 
+            </a>
+            <div *ngIf="lis.first_name=='Anonymous'" class="thumb epcl-dropcap  main-effect effect-small epcl-loader">
+                <img src="https://beta.autoreport.space/storyapi/public/uploads/634742.png">
+            </div>
                 <div class="info">
                     <div class="right">
-                        <h4 class="title usmall underline-effect"><a href="story/{{lis.slug}}">{{lis.title}}</a>
-                        </h4> <time  class="icon">{{lis.created_at | date: 'MMMM dd, yyyy'}}</time></div>
+                        <h4 class="title usmall underline-effect">
+                            
+                            <a *ngIf="lis.first_name!=='Anonymous' && lis.token==this.authorx.getToken()" href="profile/{{lis.token}}"> 
+                                {{lis.first_name}} {{lis.last_name}}
+                            </a>
+                            <a *ngIf="lis.first_name!=='Anonymous' && lis.token!==this.authorx.getToken()" href="viewprofile/{{lis.token}}"> 
+                                {{lis.first_name}} {{lis.last_name}} 
+                            </a>
+
+                            <span *ngIf="lis.first_name=='Anonymous'">{{lis.first_name}}</span>
+                        </h4> 
+                        <time  class="icon">   <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                            {{lis.postcount}}</time><br>
+                        <time  class="icon">   <i class="fa fa-heart"></i>   {{lis.sumlikes}}</time>
+                    </div>
                     <div class="clear"></div>
     </div>
     <div class="clear"></div>

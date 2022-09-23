@@ -20,7 +20,9 @@ export class ApiService {
   gettrendingstory(){
     return this.http.get(this.rootURL + '/trending');
   }
- 
+  getauthor(){
+    return this.http.get(this.rootURL + '/getauthor');
+  }
   
  
 }
