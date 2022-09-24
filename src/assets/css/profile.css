@@ -195,9 +195,12 @@ main.profilex {
     color: #ff4c60;
   }
   .containerx .cardx-footer {
-    width: 100%;
     display: flex;
+    align-items: center;
+    margin: 0px auto;
+    padding: 10px;
     justify-content: center;
+    width: max-content;
   }
   .containerx .btn-follow {
     display: flex;
