@@ -105,6 +105,7 @@
         display: none !important;
     }
     .bottom-menu {
+        box-shadow: #cecece 0 1px inset;
         z-index: 999;
     }
     .mobile{

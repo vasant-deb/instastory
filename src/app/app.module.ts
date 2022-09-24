@@ -32,6 +32,7 @@ import {AutosizeModule} from 'ngx-autosize';
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { SearchComponent } from './search/search.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { TagComponent } from './tag/tag.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
    WriteComponent,
    YourstoryComponent,
    EditprofileComponent,
-   SearchComponent
+   SearchComponent,
+   TagComponent
   ],
   imports: [
     Ng2SearchPipeModule,
