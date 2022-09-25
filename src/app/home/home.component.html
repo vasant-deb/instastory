@@ -32,11 +32,12 @@
                                             <svg>
                                                <use xlink:href="#views-outline-icon"></use>
                                             </svg>
-                                            <b *ngIf="lis.token">
-                                             <a href="viewprofile/{{lis.token}}">{{lis.first_name}} {{lis.last_name}}</a>
-                                             </b>
-                                             <b *ngIf="!lis.token">
+                                            <b *ngIf="!lis.token">
                                              <span>{{lis.first_name}} {{lis.last_name}}</span>
+                                           
+                                             </b>
+                                             <b *ngIf="lis.token">
+                                                <a href="viewprofile/{{lis.token}}">{{lis.first_name}} {{lis.last_name}}</a>
                                           </b>
                                             - {{lis.created_at}}
                                          </span>

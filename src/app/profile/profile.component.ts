@@ -40,7 +40,7 @@ export class ProfileComponent implements OnInit{
    
 });      
 
-this.http.post<any>(environment.apiUrl + '/yourstory', {email: this.email}).subscribe(data => {
+this.http.post<any>(environment.apiUrl + '/yourstory', {token: this.token}).subscribe(data => {
   this.viewstory=data.info;
 })
 //yourwriting

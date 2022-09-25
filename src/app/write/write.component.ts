@@ -37,6 +37,7 @@ export class WriteComponent implements OnInit {
          file: new FormControl('', [Validators.required]),
          fileSource: new FormControl('', [Validators.required]),
          tokenx: new FormControl(this.token),
+         postAs: new FormControl("0"),
       }); 
       
   }

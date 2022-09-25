@@ -37,7 +37,13 @@
                 <div *ngIf="f['file'].errors && f['file'].errors['required']">File is required.</div>
             </div>
         </div>
-           
+        <div class="form-group">
+          <label for="file">Post As:</label>
+          <select formControlName="postAs" id="postas" class="form-control">
+         <option value="0" selected>{{viewuser.first_name}}</option>
+         <option value="1">Anonymous</option>
+         </select>
+      </div>
          
           <button ej-button id='button' [disabled]="formdata.invalid" type="submit" class="square-button">Post</button>
           </form>
