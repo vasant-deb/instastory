@@ -1,6 +1,9 @@
 .logoc{
     display: none;
     }
+    .displaymobile{
+        display:none !important;
+    }
 @media only screen and (max-width: 916px) {
     .mobileview{
         display: none;
@@ -66,6 +69,12 @@
     }
 }
 @media only screen and (max-width: 750px) {
+    .displaymobile{
+        display:block !important;
+    }
+    .displaylaptop{
+        display:none !important;
+    }
     .mobileview{
         display: block !important;
     }

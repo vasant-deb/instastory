@@ -68,7 +68,11 @@ this.http.post<any>(environment.apiUrl + '/yourstory', {token: this.token}).subs
             this.http.post<any>(environment.apiUrl + '/savebookmark', {token: this.token,story_id:storyId,bstatus:'active'}).subscribe(data => {
             this.http.post<any>(environment.apiUrl + '/getbookmarks', {email: this.email}).subscribe(data => {
             this.story=data.info;});
-            });  
-                 
+            });      
         }
+        editprofile(){
+          this.router.navigate(['/editprofile']);
+        }
+        
+        
 }
