@@ -225,12 +225,18 @@ a.btn-follow {
   display: inline-block !important;
   margin: 0px auto  !important;
 }
+.profile{
+  margin-top: 5% !important;
+}
+.buttonf{
+    border: 1px solid #dbdbdb !important;
+}
 @media only screen and (max-width: 750px){
 .border-image-clip-path .center {
     margin-top: 0% !important;
 }
+.profile{
+  margin-top: 30% !important;
+}
 }
 
-.profile{
-  margin-top: 0% !important;
-}

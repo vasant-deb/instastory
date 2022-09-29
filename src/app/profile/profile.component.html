@@ -10,7 +10,7 @@
  
            <div class="profile__profile__details__userName">
              <h4>{{viewuser.first_name}} {{viewuser.last_name}}</h4>
-             <button *ngIf="followStatus">{{this.followStatus}}</button>
+             <button *ngIf="followStatus" class="buttonf">{{this.followStatus}}</button>
              <button *ngIf="!followStatus" (click)="editprofile()">Edit Profile</button>
              <button *ngIf="!followStatus" (click)="logout()" title="logout">
               <i class="fa fa-cog"></i>
@@ -42,7 +42,7 @@
  
            <div class="profile__profile__details__userName">
              <h4>{{viewuser.first_name}} {{viewuser.last_name}}</h4>
-             <button *ngIf="followStatus" >{{this.followStatus}}</button>
+             <button *ngIf="followStatus" class="buttonf">{{this.followStatus}}</button>
              <button *ngIf="!followStatus" (click)="editprofile()">Edit Profile</button>
              <button *ngIf="!followStatus" (click)="logout()" title="logout">
               <i class="fa fa-cog"></i>
