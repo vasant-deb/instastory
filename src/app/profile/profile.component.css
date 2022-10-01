@@ -229,6 +229,7 @@ a.btn-follow {
   margin-top: 5% !important;
 }
 .buttonf{
+    padding: 5px 20px !important;
     border: 1px solid #dbdbdb !important;
 }
 @media only screen and (max-width: 750px){
