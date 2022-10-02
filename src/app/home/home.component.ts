@@ -11,6 +11,12 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class HomeComponent implements OnInit {
+
+  page: number = 1;
+  count: number = 0;
+  tableSize: number = 10;
+  tableSizes: any = [3, 6, 9, 12];
+
   story : any;
   token=localStorage.getItem('token');
   constructor(private api:ApiService,private http: HttpClient) {}
@@ -49,6 +55,30 @@ export class HomeComponent implements OnInit {
           });
             });  
                  
+        }
+ fetchPosts(): void {
+  if(this.token=="" || this.token===undefined || this.token===null){
+    this.api.getstory().subscribe((data:any)=>{
+    this.story=data.stats;
+   
+  });
+  }
+  else {
+      this.http.post<any>(environment.apiUrl + '/homelogedin', {token: this.token}).subscribe(data => {
+      this.story=data.stats;
+     
+  });  
+
+ }
+}
+        onTableDataChange(event: any) {
+          this.page = event;
+          this.fetchPosts();
+        }
+        onTableSizeChange(event: any): void {
+          this.tableSize = event.target.value;
+          this.page = 1;
+          this.fetchPosts();
         }
   
 }

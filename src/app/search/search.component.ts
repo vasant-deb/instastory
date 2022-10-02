@@ -12,6 +12,12 @@ import { AuthenticationService } from './../services/authentication.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+
+  page: number = 1;
+  count: number = 0;
+  tableSize: number = 10;
+  tableSizes: any = [3, 6, 9, 12];
+
   data:any;
   story : any;
   trendingstory:any;
@@ -75,5 +81,35 @@ this.http.post<any>(environment.apiUrl + '/recologedin', {token: this.token}).su
             });  
                  
         }
+        fetchPosts(): void {
+          if(this.token=="" || this.token===undefined || this.token===null){
+            this.api.getstory().subscribe((data:any)=>{
+            this.story=data.stats;
+          });
+          this.api.gettrendingstory().subscribe((data:any)=>{
+            this.trendingstory=data.stats;
+          });
+          }
+          else {
+              this.http.post<any>(environment.apiUrl + '/homelogedin', {token: this.token}).subscribe(data => {
+              this.story=data.stats;
+            });  
+            this.http.post<any>(environment.apiUrl + '/trendinglogedin', {token: this.token}).subscribe(data => {
+              this.trendingstory=data.stats;
+            });   
+            this.http.post<any>(environment.apiUrl + '/recologedin', {token: this.token}).subscribe(data => {
+              this.recologedin=data.stats;
+            });   
+              }
+        }
+                onTableDataChange(event: any) {
+                  this.page = event;
+                  this.fetchPosts();
+                }
+                onTableSizeChange(event: any): void {
+                  this.tableSize = event.target.value;
+                  this.page = 1;
+                  this.fetchPosts();
+                }
  
 }
