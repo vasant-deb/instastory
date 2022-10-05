@@ -104,7 +104,7 @@ ul.dropdown__items.none {
     display: grid;
 }
 
-main.min-h-screen.min-h-screen.max-w-4xl.mx-auto.px-4.md\:px-0.flex.items-center.flex-wrap.justify-between.font-sans {
+div.min-h-screen.min-h-screen.max-w-4xl.mx-auto.px-4.md\:px-0.flex.items-center.flex-wrap.justify-between.font-sans {
   display: inline-block;
 }
 .min-h-screen {
@@ -114,7 +114,7 @@ main.min-h-screen.min-h-screen.max-w-4xl.mx-auto.px-4.md\:px-0.flex.items-center
 a.mt-2.text-gray-200.text-2xl.select-none {
   color: black;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
 }
 section {
   display: block;

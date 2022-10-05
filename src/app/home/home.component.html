@@ -25,7 +25,7 @@
         <div class="content">
            <section>
             <div *ngIf="addusersx==''"><h3> No more users left to follow !</h3></div>
-            <main *ngFor="let lis of addusersx" class="min-h-screen min-h-screen max-w-4xl mx-auto px-4 md:px-0 flex items-center flex-wrap justify-between font-sans">
+            <div *ngFor="let lis of addusersx" class="min-h-screen min-h-screen max-w-4xl mx-auto px-4 md:px-0 flex items-center flex-wrap justify-between font-sans">
                <div class="relative flex flex-col items-center cursor-pointer">
                  <a href="viewprofile/{{lis.token}}" class="w-32 h-32 p-1 bg-gradient-to-r from-yellow-200 to-pink-600 rounded-full">
                  <img class="w-full h-full p-1 bg-white rounded-full" src="{{lis.image}}" alt="" />
@@ -33,7 +33,9 @@
                  <a href="viewprofile/{{lis.token}}" class="mt-2 text-gray-200 text-2xl select-none">{{lis.first_name}} {{lis.last_name}}</a>
                  <button (click)="follow(lis.token)" class="absolute right-1 bottom-9 flex items-center justify-center w-8 h-8 p-2 bg-blue-500 text-white rounded-full border-2 border-white">+</button>
                </div>
-            </main>
+               <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
            </section>
            <section>
               <div class="articles classic">
