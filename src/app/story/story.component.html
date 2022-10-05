@@ -14,24 +14,24 @@
                             <!-- Loop: Text only style -->
                             <div class="info">
                                <h1 class="main-title title underline-effect large">
-                                  <a href="">
+                                  <a href="javascript:void(0);">
                                   {{title}}</a>
                                </h1>
                                <div class="hide-on-mobile">
                                   <!-- start: .meta -->
                                   <div class="meta">
                                      <time class="meta-info" datetime="2019-08-15">{{created_at | date: 'MMMM dd, yyyy'}}</time>
-                                     <a href="" class="comments meta-info icon mobile" title="1 Comment">
+                                     <div class="comments meta-info icon mobile" title="1 Comment">
                                         <svg>
                                            <use xlink:href="#comments-outline-icon"></use>
                                         </svg>
                                         <span class="comment-count">1</span>
-                                     </a>
+                                       </div>
                                      <span class="views-counter meta-info icon comments" title="{{views}} Views">
                                         <svg>
                                            <use xlink:href="#views-outline-icon"></use>
                                         </svg>
-                                        {{views}}
+                                        {{views}} Views
                                      </span>
                                      <span class="views-counter meta-info icon comments rightx" title="{{first_name}} {{last_name}}">
                                         <svg>
