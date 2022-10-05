@@ -69,6 +69,12 @@
     }
 }
 @media only screen and (max-width: 750px) {
+    li.search-bar {
+        margin-top: 20px !important;
+    }
+    form.contact-form.ng-untouched.ng-pristine.ng-invalid {
+        margin-top: 60px !important;
+    }
     .displaymobile{
         display:block !important;
     }

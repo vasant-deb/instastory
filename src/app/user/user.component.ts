@@ -5,11 +5,11 @@ import { Router,ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css'],
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.css'],
 })
 
-export class ProfileComponent implements OnInit{
+export class UserComponent implements OnInit{
  
   constructor(private http: HttpClient,private router: Router,private route: ActivatedRoute) { }
 
@@ -29,18 +29,17 @@ export class ProfileComponent implements OnInit{
     if(this.token!==this.route.snapshot.params['slug']){
     this.usertoken=this.route.snapshot.params['slug'];
     }
+    if(this.token==this.route.snapshot.params['slug']){
+      this.router.navigate(['/profile/'+this.token]);
+      }
     this.http.post<any>(environment.apiUrl + '/getprofile', {token: this.token, email: this.email,usertoken:this.usertoken}).subscribe(data => {
       this.viewuser=data.info;
       this.viewpostcount=data.postcount;
       this.followStatus=data.followStatus;
   })
 
-  this.http.post<any>(environment.apiUrl + '/getbookmarks', {email: this.email}).subscribe(data => {
-    this.story=data.info;
-   
-});      
 
-this.http.post<any>(environment.apiUrl + '/yourstory', {token: this.token}).subscribe(data => {
+this.http.post<any>(environment.apiUrl + '/userstory', {token: this.token,usertoken:this.usertoken}).subscribe(data => {
   this.viewstory=data.info;
 })
 //yourwriting
@@ -51,28 +50,28 @@ this.http.post<any>(environment.apiUrl + '/yourstory', {token: this.token}).subs
         
        this.http.post<any>(environment.apiUrl + '/likeupdate', {token: this.token,slug:storyId,lstatus:likestatus}).subscribe(data => {
    
-      this.http.post<any>(environment.apiUrl + '/getbookmarks', {email: this.email}).subscribe(data => {
-      this.story=data.info;});
-      this.http.post<any>(environment.apiUrl + '/yourstory', {token: this.token}).subscribe(data => {
+      this.http.post<any>(environment.apiUrl + '/userstory', {token: this.token,usertoken:this.usertoken}).subscribe(data => {
       this.viewstory=data.info;})
     
         });   
           
         }
-        logout(){
-          localStorage.clear();
-          this.router.navigate(['/login']);
-        }
-        save(storyId:any){
         
-            this.http.post<any>(environment.apiUrl + '/savebookmark', {token: this.token,story_id:storyId,bstatus:'active'}).subscribe(data => {
-            this.http.post<any>(environment.apiUrl + '/getbookmarks', {email: this.email}).subscribe(data => {
-            this.story=data.info;});
-            });      
-        }
-        editprofile(){
-          this.router.navigate(['/editprofile']);
-        }
+        follow(followStatus:any,usertoken:any){
+          this.http.post<any>(environment.apiUrl + '/followupdate', {token: this.token,usertoken:usertoken,followStatus:followStatus}).subscribe(data => {
+      
+            this.http.post<any>(environment.apiUrl + '/getprofile', {token: this.token, email: this.email,usertoken:this.usertoken}).subscribe(data => {
+              this.viewuser=data.info;
+          
+              this.followStatus=data.followStatus;
+          })
+          
+              });   
+              
+                
+             
+           }
+             
         
         
 }

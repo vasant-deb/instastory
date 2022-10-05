@@ -23,14 +23,14 @@ export class AppComponent {
   noticount:any;
   newnoticount:any;
   ngOnInit(): void {
-    
+    /*
     
    timer(0, 1000).subscribe(() => {
         this.http.post<any>(environment.apiUrl + '/getnotification', {token: this.token}).subscribe(data => {
         this.viewnoti=data.stats;
         this.noticount=data.notcount;
         this.newnoticount=data.newnotifications;
-       // this.playAudio(this.newnoticount);
+      
       });
     })
    
@@ -50,6 +50,7 @@ export class AppComponent {
   }else{
       audio.pause();
   }
+  */
   }
   
 

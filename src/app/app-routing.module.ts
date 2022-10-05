@@ -12,7 +12,7 @@ import { SearchComponent } from './search/search.component';
 import { TagComponent } from './tag/tag.component';
 import { AuthGuard } from './helpers/auth.guard';
 import { EditprofileComponent } from './editprofile/editprofile.component';
-
+import { UserComponent } from './user/user.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'story/:slug', component: StoryComponent,
@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent },
   { path: 'tag/:slug', component: TagComponent },
   {path: 'profile/:slug', component: ProfileComponent, canActivate: [AuthGuard],},
-  {path: 'viewprofile/:slug', component: ProfileComponent, canActivate: [AuthGuard],},
+  {path: 'viewprofile/:slug', component: UserComponent, canActivate: [AuthGuard],},
   {path: 'bookmark', component: BookmarkComponent, canActivate: [AuthGuard],},
   {path: 'notification', component: NotificationComponent, canActivate: [AuthGuard],},
   {path: 'write', component: WriteComponent, canActivate: [AuthGuard],},

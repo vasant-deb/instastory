@@ -43,7 +43,7 @@ export class AuthenticationService {
         localStorage.setItem(this.emailKey, email);
         localStorage.setItem(this.tokenKey, token);
         
-        this.router.navigate(["/profile/"+token]);
+        this.router.navigate(["/editprofile"]);
       });
   }
 

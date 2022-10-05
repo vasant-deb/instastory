@@ -1,0 +1,212 @@
+
+   <div class="profile" >
+    <div class="profile__profile row center"  *ngIf="viewuser">
+      <div class="container d-flex align-items-center displaylaptop">
+
+        <div class="profile__profile__logo">
+          <img class="avatar" src="{{viewuser.image}}" alt="Profile Image">
+        </div>
+        <div class="profile__profile__details">
+
+          <div class="profile__profile__details__userName">
+            <h4>{{viewuser.first_name}} {{viewuser.last_name}}</h4>
+            <button *ngIf="followStatus" (click)="follow(this.followStatus,viewuser.token)" class="buttonf">{{this.followStatus}}</button>
+         
+          </div>
+          <div class="profile__profile__details__follower my-3">
+            <span><b>{{this.viewpostcount}}</b> posts</span>
+            <button>
+              <b>{{viewuser.followersCount}}</b> followers
+            </button>
+            <button>
+              <b>{{viewuser.followingCount}}</b> following
+            </button>
+          </div>
+          <div class="profile__profile__details__displayName">
+            <h6>{{viewuser.bio}}</h6>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="d-flex align-items-center displaymobile">
+
+        <div class="profile__profile__logo">
+          <img class="avatar" src="{{viewuser.image}}" alt="Profile Image">
+        </div>
+        <div class="profile__profile__details">
+
+          <div class="profile__profile__details__userName">
+            <h4>{{viewuser.first_name}} {{viewuser.last_name}}</h4>
+            <button *ngIf="followStatus" (click)="follow(this.followStatus,viewuser.token)" class="buttonf">{{this.followStatus}}</button>
+         
+           
+
+          </div>
+          <div class="profile__profile__details__follower my-3">
+            <button><b>{{this.viewpostcount}}</b> posts</button>
+            <button>
+              <b>{{viewuser.followersCount}}</b> followers
+            </button>
+            <button>
+              <b>{{viewuser.followingCount}}</b> following
+            </button>
+          </div>
+          <div class="profile__profile__details__displayName">
+            <h6>{{viewuser.bio}}</h6>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="tagsnew">
+   
+        <div class="tags profiletag">
+           <a  href="/tag/Life" class="tag-link-0">Life</a>
+        </div>
+        <div class="tags profiletag">
+           <a href="/tag/Love" class="tag-link-1">Love</a>
+        </div>
+        <div class="tags profiletag">
+           <a href="/tag/True" class="tag-link-2">True</a>
+        </div>
+        <div class="tags profiletag">
+           <a href="/tag/Horror" class="tag-link-3">Horror</a>
+        </div>
+        <div class="tags profiletag">
+          <a  href="/tag/Science" class="tag-link-0">Science</a>
+       </div>
+       <div class="tags profiletag">
+          <a href="/tag/School" class="tag-link-1">School</a>
+       </div>
+       <div class="tags profiletag">
+          <a href="/tag/College" class="tag-link-2">College</a>
+       </div>
+       <div class="tags profiletag">
+          <a href="/tag/Technology" class="tag-link-3">Technology</a>
+       </div>
+      
+     </div>
+    </div>
+  </div>
+
+  <div class="border-image-clip-path">
+       <div class="row center">
+         <div class="col-md-12">
+            <div class="tabs">
+             
+            
+               <input type="radio" id="tab3" name="tab-control" checked>  
+               <ul>
+                 
+                  <li title="Shipping"><label for="tab3" class="mystyle" role="button">All Posts</label></li>
+               </ul>
+               <div class="content">
+                                 
+                  <section>
+                     <div class="articles classic">
+                         <article *ngIf="viewstory" class="default classic-large index-0 odd primary-cat-4 grid-100 tablet-grid-100 post-76 post type-post status-publish format-standard has-post-thumbnail hentry category-music category-technology category-travel tag-country tag-image">
+                            <div class="newpost" *ngFor="let lis of viewstory ; let j = index">
+                               <header>
+                                  <!-- start: .post-format-image -->
+                                  <div class="post-format-image post-style-small-image">
+                                     <!-- start: .featured-image -->
+                                     <div class="featured-image epcl-flex">
+                                        <!-- Loop: Small Image Style -->
+                                        <div class="info">
+                                           <div class="hide-on-mobile">
+                                              <!-- start: .meta -->
+                                              <div class="meta">
+                                                 <span class="views-counter meta-info icon comments" title="{{lis.first_name}} {{lis.last_name}}">
+                                                    <svg>
+                                                       <use xlink:href="#views-outline-icon"></use>
+                                                    </svg>
+                                                    <b>{{lis.first_name}} {{lis.last_name}}</b> - {{lis.created_at}}
+                                                 </span>
+                                             
+                                                 <div class="clear"></div>
+                                              </div>
+                                              <!-- end: .meta -->
+                                           </div>
+                                        </div>
+                                        <!-- Loop: Standard Image Style -->
+                                        <!-- Loop: Text only style -->
+                                     </div>
+                                     <!-- end: .featured-image -->
+                                  </div>
+                                  <!-- end: .post-format-image -->
+                                  <div class="clear"></div>
+                               </header>
+                               <!-- start: .bottom -->
+                               <div class="bottom">
+                                  <div class="post-excerpt">
+                                     <a href="story/{{lis.slug}}" class="thumb epcl-dropcap main-effect loaded"> 
+                                     <span class="fullimage cover" role="img" style="background-image: url({{lis.image}});"></span> 
+                                     <span class="fullimage fake-layout cover" style="background-image: url({{lis.image}});"></span>
+                                     </a>
+                                     <h1 class="main-title title underline-effect large">
+                                        <a class="titlestyle" href="story/{{lis.slug}}">
+                                        {{lis.title}}</a>
+                                     </h1>
+                                     <p class="mystylenew" [innerHTML]="(lis.description.length>6)? (lis.description | slice:0:150)+'..':(lis.description)"></p>
+                                     <div class="clear"></div>
+                                  </div>
+                                  <div class="tags">
+                                     <div class="tags" *ngFor="let tag of lis.tags?.split(',') ; let i = index">
+                                        <a href="/tag/{{tag}}" class="tag-link-{{i}}">{{tag}}</a>                
+                                     </div>
+                                  </div>
+                                  <div class="mobile">
+                                    <!-- start: .meta -->
+                                       <span class="views-counter meta-info icon comments" title="{{lis.first_name}} {{lis.last_name}}">
+                                          <b>{{lis.first_name}} {{lis.last_name}}</b> - {{lis.created_at}}
+                                       </span>
+                                      
+                                       <div class="clear"></div>
+                                    </div>
+                                    <!-- end: .meta -->
+                               <!----    <div class="meta bottom hide-on-mobile">
+                                    <div class="dropdownx">
+                                      <input type="checkbox" id="dropdownxx-{{j}}">
+                                      <label class="" for="dropdownxx-{{j}}">
+                                       <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                      </label>
+                                      <ul class="dropdown__items none">
+                                         <li class="meta bottom hide-on-mobile"> 
+                                            <a href="#" title="Report" class="author meta-info">  <i class="fa-solid fa-flag"></i></a></li>
+                                         <li class="meta bottom hide-on-mobile"> 
+                                            <a href="#" title="Save" class="author meta-info"> <i class="fa-solid fa-bookmark"></i></a></li>  
+                                      </ul>
+                                    </div>  
+                                   </div>  
+                                 
+        
+                                  <div class="meta bottom hide-on-mobile"> 
+                                   <a href="#" title="Comments" class="author meta-info">
+                                      <i class="fa-solid fa-comment"></i> {{lis.commentsCount}}</a></div> -->
+                                  <div class="meta bottom hide-on-mobile"> 
+                                   <a *ngIf="token===null" href="/login" title="Likes" class="author meta-info {{lis.likestatus}}">  
+                                      <i class="fa-solid fa-heart"></i> {{lis.agree}}</a>
+                                      <a *ngIf="token!==null" (click)="like(lis.slug,lis.likestatus)" title="Likes" class="author meta-info {{lis.likestatus}}">  
+                                         <i class="fa-solid fa-heart"></i> {{lis.agree}}</a>
+                                   </div>
+                               </div>
+                               <!-- end: .right -->
+                               <div class="clear"></div>
+                               <hr class="lc" aria-hidden="true">
+                            </div>
+                         </article>
+                      </div>
+                  </section>
+               </div>
+            </div>
+         </div>
+       </div>
+     </div>
+
+
+   
+    
+
+
+  

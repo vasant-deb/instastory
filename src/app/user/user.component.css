@@ -1,0 +1,245 @@
+body{
+    overflow: hidden; /* Hide scrollbars */
+  }
+  row{
+    overflow: hidden !important;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+  }
+  p {
+    font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  @-webkit-keyframes float {
+    0% {
+      box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+      transform: translatey(0px);
+    }
+    50% {
+      box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+      transform: translatey(-20px);
+    }
+    100% {
+      box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+      transform: translatey(0px);
+    }
+  }
+  
+  @keyframes float {
+    0% {
+      box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+      transform: translatey(0px);
+    }
+    50% {
+      box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+      transform: translatey(-20px);
+    }
+    100% {
+      box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+      transform: translatey(0px);
+    }
+  }
+  .avatar {
+    -webkit-animation: float 6s ease-in-out infinite;
+            animation: float 6s ease-in-out infinite;
+  }
+  .profilex{
+    margin-top:60px;
+  }
+  .border-image-clip-path {
+      margin: 0px auto;
+      display: inline-block;
+      align-items: center;
+      width: 80%;
+      height: auto;
+      margin-bottom: 100px;
+  }
+  
+  @keyframes huerotate {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+  }
+  .row.center {
+    width: 100% !important;
+  }
+  @media only screen and (max-width: 750px) {
+    .center > div {
+      width: 130%;
+      mAX-WIDTH: 140%;
+    }
+    .border-image-clip-path {
+      margin: 0px auto;
+      display: inline-block;
+      align-items: center;
+      width: 100%;
+      height: auto;
+      border: 0px;
+      border-image: none;
+      clip-path: none;
+      filter: hue-rotate(360deg);
+  }
+    }
+  .tags.profiletag {
+    margin: 5px auto;
+    display: inline-block;
+  }
+  .tagsnew{
+    margin:10px auto;
+  }
+  button.btn-follow {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: 500 !important;
+  }
+  a.btn-follow {
+    font-weight: 500 !important;
+  }
+  .profile {
+    margin-top: 100px;
+    margin-bottom: 25px;
+  }
+  .profile__header {
+    background-color: white;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+  }
+  .profile__logo {
+    object-fit: contain;
+  }
+  .profile__logo img {
+    width: 150px;
+  }
+  .profile__searchBar input[type=text] {
+    width: 300px;
+    background-color: #efefef;
+    border-radius: 5px;
+    border: none;
+  }
+  .profile__settings {
+    display: flex;
+  }
+  .profile__settings button {
+    width: 52px;
+    height: 52px;
+    background-color: transparent;
+    border: none;
+  }
+  .profile__settings button svg {
+    width: 28px;
+    height: 28px;
+  }
+  .profile__settings img {
+    width: 28px;
+    object-fit: contain;
+    border: 1px solid black;
+    border-radius: 100%;
+  }
+  .profile__profile {
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+  .profile__profile__logo {
+    flex: 1;
+    text-align: center;
+  }
+  .profile__profile__logo img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 2px solid #ff4c60;
+  }
+  .profile__profile__details {
+    flex: 2;
+  }
+  .profile__profile__details__userName {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .profile__profile__details__userName h4 {
+    font-weight: normal;
+  }
+  .profile__profile__details__userName button {
+    background-color: transparent;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    padding: 2px 5px;
+  }
+  .profile__profile__details__userName button:last-child {
+    border: none;
+  }
+  .profile__profile__details__follower {
+    display: flex;
+    gap: 20px;
+  }
+  .profile__profile__details__follower button {
+    background-color: transparent;
+    border: none;
+  }
+  
+  .profile__profile__details__userName h4 {
+    margin: 0px;
+  }
+  .profile,.profile h4,.profile h6,.profile button {
+    font-size: 18px;
+  }
+  .profile__profile__details__follower.my-3 {
+    padding: 10px;
+    margin: 10px auto;
+  }
+  .displaymobile .profile__profile__details__userName {
+    margin: 0px auto !important;
+    width: 100%;
+    display: block;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .displaymobile  h4 {
+    color:#000;
+    padding: 0px 10px;
+    display: inline-block !important;
+    margin: 0px auto  !important;
+  }
+  .displaymobile h6{
+    text-align: center;
+  }
+  
+  .displaymobile button {
+    padding: 5px 10px;
+    display: inline-block !important;
+    margin: 0px auto  !important;
+  }
+  .profile{
+    margin-top: 5% !important;
+  }
+  .buttonf{
+      padding: 5px 20px !important;
+      border: 1px solid #dbdbdb !important;
+  }
+  @media only screen and (max-width: 750px){
+  .border-image-clip-path .center {
+      margin-top: 0% !important;
+  }
+  .profile{
+    margin-top: 30% !important;
+  }
+  }
+  
+  .displaymobile img.avatar {
+    margin: 0px auto;
+}

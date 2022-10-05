@@ -34,6 +34,7 @@ import { SearchComponent } from './search/search.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { TagComponent } from './tag/tag.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { UserComponent } from './user/user.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
    YourstoryComponent,
    EditprofileComponent,
    SearchComponent,
-   TagComponent
+   TagComponent,
+   UserComponent
   ],
   imports: [
     NgxPaginationModule,

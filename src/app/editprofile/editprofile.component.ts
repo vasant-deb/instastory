@@ -36,6 +36,7 @@ export class EditprofileComponent implements OnInit {
             country: new FormControl(this.viewuser.country, [Validators.required, Validators.minLength(4)]),
             state: new FormControl(this.viewuser.state, [Validators.required, Validators.minLength(4)]),
             tokenx: new FormControl(this.token),
+            gender: new FormControl(this.viewuser.gender),
          }); 
  
     })
