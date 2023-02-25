@@ -34,7 +34,7 @@ export class NotificationComponent implements OnInit {
 }
 playAudio(x:any){
   let audio = new Audio();
-  audio.src = "https://beta.autoreport.space/storyapi/public/uploads/relax-message-tone.mp3";
+  audio.src = "https://checklistforme.online/storyapi/public/uploads/relax-message-tone.mp3";
   audio.load();
   audio.loop = false;
 

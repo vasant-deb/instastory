@@ -9,7 +9,7 @@ export class ApiService {
   constructor (private http:HttpClient) {}
 
 
-  rootURL = 'https://beta.autoreport.space/storyapi/public';
+  rootURL = 'https://checklistforme.online/storyapi/public';
 
   getstory() {
     return this.http.get(this.rootURL + '/home');

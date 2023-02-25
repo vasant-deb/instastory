@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://beta.autoreport.space/storyapi/public',
+  apiUrl: 'https://checklistforme.online/storyapi/public',
 };

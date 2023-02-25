@@ -31,7 +31,7 @@ export class StoryComponent implements OnInit {
    ngOnInit() { 
     
     if(this.token==null||this.token==undefined||this.token==""){
-    this.http.post<any>('https://beta.autoreport.space/storyapi/public/viewstory', { slug: this.route.snapshot.params['slug'] }).subscribe(data => {
+    this.http.post<any>('https://checklistforme.online/storyapi/public/viewstory', { slug: this.route.snapshot.params['slug'] }).subscribe(data => {
       this.title=data.stats.title;
       this.tags=data.stats.tags;
       this.created_at=data.stats.created_at;
@@ -53,7 +53,7 @@ export class StoryComponent implements OnInit {
   }
 else{
 
-  this.http.post<any>('https://beta.autoreport.space/storyapi/public/viewstory', { token:this.token,slug: this.route.snapshot.params['slug'] }).subscribe(data => {
+  this.http.post<any>('https://checklistforme.online/storyapi/public/viewstory', { token:this.token,slug: this.route.snapshot.params['slug'] }).subscribe(data => {
       this.title=data.stats.title;
       this.tags=data.stats.tags;
       this.created_at=data.stats.created_at;
